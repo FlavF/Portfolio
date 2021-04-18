@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- à modifier -->
+    <meta name="description" content="Portofolio de Flavia">
+    <title>Portfolio de Flavia</title>
+     <!-- Favicon-->
+    <!-- <link rel="icon" type="image/png" href="ton image.png">-->
+    <!-- Normalize -->
+    <link rel="stylesheet" href="Assets/css/normalize.css">
+     <!-- Font awesome -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+    <!-- Style page -->
+    <link rel="stylesheet" href="Assets/css/main.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <?php include "Views/header.phtml"; ?>
+    </header>
+<!-- Main -->
+    <main class="container">
+    <aside><?php include "Views/aside.phtml";?></aside>
+        <?php include $template; ?>
+    </main>
+<!-- Footer -->
+    <footer>
+        <?php include "Views/footer.phtml"; ?>
+    </footer>
+
+    <!-- ===========SCRIPTS =========== -->
+    <!-- IF NOT JAVASCRIPT -->
+    <noscript>Your browser does not support JavaScript! You will not be able to enjoy all the contents in this website // Votre navigateur ne supporte pas JavaScript. Vous n'aurez donc pas toutes les fonctionnalités. </noscript>
+    <!-- JQUERY  -->
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="crossorigin="anonymous"></script> -->
+    
+    <!-- MAIN SCRIPT-->
+    <script src="Assets/js/main.js"></script>
+
+</body>
+
+</html>

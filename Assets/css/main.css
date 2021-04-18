@@ -1,0 +1,234 @@
+/* *****************************************************************
+°°°°°°°°°°°°°°°°°°°°°°°°°°     TOOLS      °°°°°°°°°°°°°°°°°°°°°°°°°°
+***************************************************************** */
+
+* {
+	box-sizing: border-box;
+	/* width of each box got padding and border (default, it's only the width of the content */
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+	/* 1rem = 10px (10/16*100) default size is 16px */
+}
+
+
+/* *****************************************************************
+°°°°°°°°°°°°°°°°°°°°°°°°°°     ROOT      °°°°°°°°°°°°°°°°°°°°°°°°°°
+***************************************************************** */
+
+:root {
+	/* Color */
+	--main-color:#272643;
+	--second-color: white;
+	
+	/* Color Titles */
+	--title-color :#0a4d4d;
+	
+	/* Color Nav */
+	--menu-color: #2c698d;
+		
+	/* Background Color */
+	--main-background-color:#e3f6f5;
+	
+	/* Font */
+	--main-font: 'Libre Baskerville', serif;
+	
+	/*Size Mobile */
+	--main-size: 1rem;
+	--line-size: 1rem;
+	--line: 2rem;
+	--line-title: 2rem;
+	--title-two-size: 1.5rem;
+	--footer-size : 1rem;
+	
+	/*Size desktop*/
+	--main-size-desktop: 1.8rem;
+	--line-size-desktop: 3rem;
+	--line-footer-desktop : 1.5rem;
+	--line-title-desktop: 2.8rem;
+	--line-desktop: 3rem;
+	--title-two-Size-desktop: 2.7rem;
+	--footer-size-desktop : 1.5rem;
+}
+
+
+/* *****************************************************************
+°°°°°°°°°°°°°°°°°°°°°°°°°°     GENERALITY     °°°°°°°°°°°°°°°°°°°°°°°°°°
+***************************************************************** */
+
+body {
+	font-size : var(--main-size);
+	font-family: var(--main-font);
+	line-height: var(--line-size);
+	background-color: var(--main-background-color);
+	text-align: justify;
+	min-height: 100%;
+}
+
+main{
+	min-height: 100%;
+	width: auto;
+	line-height: var(--line-size);
+}
+
+/*image*/
+
+img {
+	max-width: 100%;
+	width: auto;
+	height: auto;
+	margin: auto;
+}
+
+/* *****************************************************************
+*************************   DEFAULT PAGE   *************************
+***************************************************************** */
+
+@font-face{
+	font-family:"Libre Baskerville";
+	src: url("../fonts/Libre_Baskerville/LibreBaskerville-Regular.ttf") format("ttf")
+}
+
+
+/* *****************************************************************
+-------------------------      TITLES      -------------------------
+***************************************************************** */
+
+h1,h2,h3 {
+	text-align: center;	
+	line-height: var(--line-title);
+	color: var(--title-color)
+}
+
+p{
+	margin : 1.5rem 0;
+}
+
+/* *****************************************************************
+-------------------------      HEADER      -------------------------
+***************************************************************** */
+header{
+	min-height: 5%;
+}
+
+
+/* *****************************************************************
+-------------------------        MAIN      -------------------------
+***************************************************************** */
+
+/* ::::::::::: NAV :::::::::: */
+/* Style the links inside the sidenav */
+.sidenav a {
+	position: absolute; 
+	left: -13rem; 
+	transition: 0.3s; 
+	padding: 1.5rem; 
+	width: 15rem; 
+	text-decoration: none; 
+	font-size: 2rem; 
+	color: var(--second-color); 
+	border-radius: 5rem; 
+	text-align: center;
+}
+
+.sidenav a:hover,
+.sidenav a:active {
+	left: 0;
+}
+
+.menu-one,
+.menu-two,
+.menu-three,
+.menu-four
+{
+	background-color:var(--menu-color); 
+}
+
+.menu-one {
+	top: 8rem;
+	}
+
+.menu-two {
+	top: 12rem;
+}
+
+.menu-three{
+	top: 16rem;
+}
+
+.menu-four{
+	top: 20rem;
+}
+
+/* *****************************************************************
+-------------------------       FOOTER     -------------------------
+***************************************************************** */
+
+footer {
+	min-height: 15%;
+	text-align: center;
+	overflow-y:hidden;
+}
+
+/*  ************** Icons  **************  */
+.fab, .fas {
+	color: var(--main-color);
+}
+
+
+/*  ************** Copyright **************  */
+.end-footer{
+	text-align:center;
+}
+
+/* *****************************************************************
+*************************    PAGE : HOME   *************************
+***************************************************************** */
+
+/*  **************  **************  */
+
+
+
+/* *****************************************************************
+*************************   PAGE : ERROR  *************************
+***************************************************************** */
+.error{
+	background-image: url("../img/error404.jpeg") no-repeat center center fixed ;
+}
+
+
+/* *****************************************************************
+*************************    PAGE : XXXX   *************************
+***************************************************************** */
+
+
+
+
+/*      *************************************************         */
+
+
+
+/* *****************************************************************
+.......................  PC/DESKTOP VERSION  ....................... 
+***************************************************************** */
+
+
+@media screen and (min-width: 800px) {
+	
+	
+	body {
+		font-size : var(--main-size-desktop);
+		line-height: var(--line-size-desktop);
+	}
+	
+	h1,h2,h3 {
+		line-height: var(--line-title-desktop);
+	}
+	
+	
+	
+	
+}
