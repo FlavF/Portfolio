@@ -4,19 +4,18 @@
 
     <h3 id="contact">Contactez-moi</h3>
     <div>
+        <!--Email link -->
         <a href="mailto:flaviaf91@gmail.com">
             <i class="fas fa-envelope"></i></a>
-
+        <!--Linkedin link -->
         <a href="https://fr.linkedin.com/in/flaviafontaineit/fr" target="_blank"
             title="S'ouvre dans un  nouvel onglet vers la page Linkedin">
             <i class="fab fa-linkedin"></i></a>
-
+        <!--Git link -->
         <a href="https://github.com/FlavF" target="_blank" title="S'ouvre dans un  nouvel onglet vers la page Linkedin">
             <i class="fab fa-github"></i></a>
-
-        <a href=""><i class="far fa-comment"></i></a>
-
-
+        <!--To write to me link -->
+        <span id="message"><i class="far fa-comment"></i></span>
     </div>
 
 
@@ -27,11 +26,10 @@
     Copyright FlaviaDev © 2021
 </section>
 
-
-<div class="modal hidden">
-    <center>
+<div id="modal" class="hidden">
+    <div class="modal-content">
         <h1>Message</h1>
-
+         <span class="close">&times;</span>
         <form action="index.php?page=formMessage" method="post">
             <p>
                 <label for="email">Email</label>
@@ -52,9 +50,9 @@
                 <input type="submit" name="submit" value="Envoyer">
             </p>
         </form>
-          <div> <?php if(isset($_GET['response'])): ?>
-        <?= $_GET['response'] ?>
-        <?php endif; ?>
+        <div> <?php if(isset($_GET['response'])): ?>
+            <?= $_GET['response'] ?>
+            <?php endif; ?>
+        </div>
     </div>
-    </center>
 </div>
