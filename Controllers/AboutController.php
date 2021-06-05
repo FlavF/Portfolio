@@ -1,11 +1,11 @@
 <?php
 
-class PageController extends FrontController
+class AboutController extends FrontController
 {
     public function display()
     {
             // templates page
-        $template = "page.phtml";
+        $template = "about.phtml";
         include "Views/layout.phtml";
     }
 

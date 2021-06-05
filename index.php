@@ -32,12 +32,36 @@ else
     {
         // ========= FRONT ===================
     
-        ///page Page
-        case 'page':
-            $controller = new PageController();
+        ///page About
+        case 'about':
+            $controller = new AboutController();
+            $controller->display();
+            break;   
+
+        ///page Project
+        case 'project':
+            $controller = new ProjectController();
+            $controller->display();
+            break;   
+
+        ///page Photography
+        case 'photography':
+            $controller = new PhotographyController();
             $controller->display();
             break;   
             
+        ///page Link
+        case 'link':
+            $controller = new LinkController();
+            $controller->display();
+            break;   
+
+        ///page Opinion
+        case 'opinion':
+            $controller = new OpinionController();
+            $controller->display();
+            break;   
+
                // **** Message **** 
              // get page message  
         case 'message':

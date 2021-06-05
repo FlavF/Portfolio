@@ -61,9 +61,8 @@ body {
 	font-family: serif;
 	background-color: var(--main-background-color);
 	text-align: justify;
-	height: 100vh;
-	width: 100vw;
-	
+	/*height: 100vh;
+	width: 100vw;*/
 }
 
 /*image*/
@@ -73,6 +72,31 @@ img {
 	width: auto;
 	height: auto;
 	margin: auto;
+}
+
+/* button to go back up*/
+.button-top {
+	display: block;
+	position: fixed;
+	bottom: 2rem;
+	right: 3rem;
+	z-index: 99;
+	font-size: 1.8rem;
+	border: none;
+	outline: none;
+	background-color: var(--menu-color);
+	color: var(--second-color);
+	cursor: pointer;
+	padding: 1.5rem;
+	border-radius: 0.4rem;
+	height: 5rem;
+}
+
+.button-top:hover,
+.button-top:active,
+.button-top:focus {
+	color: var(--menu-color);
+	background-color: var(--second-color);
 }
 
 
@@ -101,10 +125,40 @@ p{
 /* *****************************************************************
 -------------------------      HEADER      -------------------------
 ***************************************************************** */
-header{
+/* header{
 	height: 10vh;
+} */
+
+.header{
+	margin-top: auto;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: flex-start;
 }
 
+.browser{
+	color:var(--title-color);
+	margin-top: auto;
+	display: inline-block;          
+	padding-right: 1rem;                
+	padding-left: 100%;                   
+	white-space: nowrap;                 
+	animation: defilement-rtl 60s infinite linear;
+}
+
+@keyframes defilement-rtl {
+	0% {
+		transform: translate3d(0,0,0);      /* position initiale à droite */
+	}
+	100% {
+		transform: translate3d(-100%,0,0);  /* position finale à gauche */
+	}
+}
+
+.bold{
+	font-weight: 500;
+}
 
 /* *****************************************************************
 -------------------------        MAIN      -------------------------
@@ -112,7 +166,7 @@ header{
 
 main{
 	padding: 1rem 1rem 1rem 15rem;
-	height: 80vh;
+	/* height: 80vh; */
 }
 
 
@@ -152,7 +206,8 @@ main{
 .menu-one,
 .menu-two,
 .menu-three,
-.menu-four
+.menu-four,
+.menu-five
 {
 	background-color:var(--menu-color); 
 }
@@ -173,19 +228,21 @@ main{
 	top: 40vh;
 }
 
+.menu-five{
+	top: 50vh;
+}
 
 /*  ************** Picture **************  */
 
 /* Logo */
 .logo{
-	width: 5%;
+	width: 35%;
 	height:auto;
 }
 
 
-
 .small-language{
- width: 5%;
+	width: 5%;
 }
 
 
@@ -200,7 +257,7 @@ main{
 ***************************************************************** */
 
 footer {
-	height:10vh;
+	/* height:10vh; */
 	text-align: center;
 	overflow-y:hidden;
 }
