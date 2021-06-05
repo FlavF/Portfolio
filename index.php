@@ -39,17 +39,20 @@ else
             break;   
             
                // **** Message **** 
-               // page to update links
+             // get page message  
         case 'message':
             $controller = new MessageController();
             $controller->display();
             break;
 
-               ///page Yoga from page
+            //send message
         case 'formMessage':
             $controller = new MessageController();
             $controller-> submitForm();
             break;
+
+
+
 
 
         // ========= BACK ===================
