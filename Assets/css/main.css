@@ -180,7 +180,7 @@ main{
 	width: 15rem; 
 	text-decoration: none; 
 	font-size: 2rem; 
-	color: var(--second-color); 
+	color: var(--menu-color); 
 	border-radius: 5rem; 
 	line-height: 2rem;
 }
@@ -189,6 +189,8 @@ main{
 .sidenav a:active,
 .sidenav a:focus{
 	left: 0;
+	color: var(--second-color); 
+	
 }
 
 .sidenav a .far,
