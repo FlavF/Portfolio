@@ -189,8 +189,7 @@ main{
 .sidenav a:active,
 .sidenav a:focus{
 	left: 0;
-	color: var(--second-color); 
-	
+	color: var(--second-color); 	
 }
 
 .sidenav a .far,
