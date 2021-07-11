@@ -4,7 +4,11 @@ class LinkController extends FrontController
 {
     public function display()
     {
-            // templates page
+        $model = new LinkModel();
+        $links = $model -> getLinks();
+
+
+        // templates page
         $template = "link.phtml";
         include "Views/layout.phtml";
     }

@@ -1,110 +1,128 @@
-<h1 id="#about">Mon CV</h1>
-<section class="flex-2">
-    <article class="lex-left">
-        <h3>Hard Skills</h3>
-        <h4>Intégration - Développement web</h4>
-        <p><img class="small-language" src="Assets/img/languages/html.png" alt="html logo"></p>
-        <p><img class="small-language" src="Assets/img/languages/css.png" alt="css logo"></p>
-        <p><img class="small-language" src="Assets/img/languages/js.jpg" alt="js logo"></p>
-        <p><img class="small-language" src="Assets/img/languages/vuejs.jpg" alt="vuejs logo"></p>
-        <p><img class="small-language" src="Assets/img/languages/php.jpg" alt="php logo"></p>
+<section class="page-about">
+    <h1 id="#about">Flavia</h1>
 
-        <h4>Bureautique</h4>
-        <p>Pack Office / SharePoint / Page / Numbers</p>
-        <h4>SIRH</h4>
-        <p>People Soft / ADP / Chronos </p>
-
-        <h4>Langues</h4>
-        <p>Anglais : courant</p>
-        <p>Espagnol : intermédiaire</p>
-        <p>Japonais : débutant</p>
-
-        <h4>Connaissances RH</h4>
-        <p>SIRH / Réseaux Sociaux d’Entreprise</p>
-        <p>Administration du personnel</p>
-        <p>Formation</p>
-
-        <h3>Soft Skills</h3>
-        <p>Autonomie, réactivité,</p>
-        <p>Créativité, résolution de problèmes,</p>
-        <p>Curiosité</p>
-
-        <h3>Formations</h3>
-        <p>2020-2021</p>
-        <p>3 W Academy – Bac +2</p>
-        <p>Développeur Intégrateur d’application Web</p>
-
-        <p>2020</p>
-        <p>MOOCs</p>
-        <p>Openclassroom -« Découvrez le fonctionnement des algorithmes »</p>
-
-        <p>2016 - 2017</p>
-        <p>ISGP - BAC +4</p>
-        <p>Manager de l’Organisation des Ressources Humaines et des Relations Sociales</p>
-        <p>Mémoire sur la Transformation Digitale</p>
-
-        <p>2008-2009
-        <p>Université Paris Descartes – BAC+3</p>
-        <p>Licence de Psychologie</p>
-
-        <h3>Centres d’interêt</h3>
-        Nouvelles Technologies - Cinéma (VO)
-        Voyages : Australie et Nouvelle Zélande
+    <!-- Qui suis je -->
+    <article>
+        <h2>Qui-suis-je ?</h2>
+        <div>
+            <ul class="tags">
+                <?php foreach($cloud as $tag): ?>
+                <li class="tag">
+                    <a class="tag__link" href="#">
+                        <?=htmlspecialchars($tag['tag'])?>
+                    </a>
+                </li>
+                <?php endforeach;?>
+            </ul>
+        </div>
     </article>
 
+
+    <!-- experiences -->
+    <!-- experience IT -->
     <article>
-        <h3>Projets Personnels</h3>
-        Liens de page à mettre
+        <h2>Formations et jobs IT</h2>
+        <div class="timeline">
+            <?php foreach($aboutIt as $it): ?>
 
-        <h3>Expériences</h3>
-        <h4>Coordinatrice RH 2018 à 2020</h4>
-        <p>STANLEY BLACK & DECKER FRANCE SERVICES INDUSTRIE</p>
-        <h5>Administration du Personnel</h5>
-        <ul>
-            <li>Utilisation du SIRH People Soft : onboarding et sortie, modifications et ajouts de données, reportings
-            </li>
-            <li>Gestion et suivi des alternants et d’une trentaine d’intérimaires, de la recherche à la facturation
-                (progiciels de gestion de factures)</li>
-        </ul>
-        <p>Formation (appui administratif)</p>
-        <ul>
-        <li>Suivi des formations, du budget de formation, gestion des factures, bilans annuels</li>
-        <li> KPI mensuel : retour des questionnaires formation, parcours d’intégration, nouvelle embauche, fiches de poste</li>
-       </ul>
-        <p>Projets Divers</p>
-        <p>Création de tableau de suivi : des factures, des recherches d’intérimaires</p>
-        <p>Rédactions de procédures liées au département RH</p>
-        <p>Mise à jour du process d’Onboarding</p>
+            <?php if($it['type'] === "job" ) : ?>
+            <div class="container-about right">
+                <div class="content">
+                    <?php if($it['start_date'] === $it['end_date'] ) : ?>
+                    <h2><?=htmlspecialchars($it['start_date']) ?></h2>
+                    <?php else: ?>
+                    <h2><?=htmlspecialchars($it['start_date']) ?> - <?=htmlspecialchars($it['end_date'] ) ?></h2>
+                    <?php endif; ?>
+                    <h3><?=htmlspecialchars($it['name']) ?></h3>
+                    <h4><?=htmlspecialchars($it['location']) ?></h4>
+                    <p><?=htmlspecialchars($it['description']) ?></p>
+                </div>
+            </div>
+            <?php endif; ?>
 
-        <h4>Assistante Administrative PSE 2017 à 2018</h4>
-        <p> BNP PARIBAS CIB – ALTEDIA FINANCE</p>
-        <p> Utilisation de différents SI pour suivre les dossiers de PDV, transmettre les documents de télétravail et
-            réceptionner l’avenant de télétravail.</p>
-        <p> Gestion du PDV : accords, convention de rupture, charte, gestion des factures</p>
-        <p> Gestion du Télétravail : reportings, procédures, contrôles, formation de l'équipe sur le process</p>
+            <?php if($it['type'] === "formation" ) : ?>
+            <div class="container-about left">
+                <div class="content">
+                    <?php if($it['start_date'] === $it['end_date'] ) : ?>
+                    <h2><?=htmlspecialchars($it['start_date']) ?></h2>
+                    <?php else: ?>
+                    <h2><?=htmlspecialchars($it['start_date']) ?> - <?=htmlspecialchars($it['end_date'] ) ?></h2>
+                    <?php endif; ?>
+                    <h3><?=htmlspecialchars($it['name']) ?></h3>
+                    <h4><?=htmlspecialchars($it['location']) ?></h4>
+                    <p><?=htmlspecialchars($it['description']) ?></p>
+                </div>
+            </div>
+            <?php endif; ?>
 
-        <h4>Assistante Mobilité Internationale et Administration du Personnel 2016</h4>
-        <p>ALLIANZ WORLDWIDE PARTNERS SAS => Allianz Partners ASSURANCES</p>
-        <p>Administration du Personnel</p>
-        <p>Gestion du temps - Chronos : formation des salariés & remontée des anomalies au service SIRH</p>
-        <p>Gestion et suivi des dossiers administratifs des nouveaux arrivants, du contrat à la visite médicale</p>
-        <p>Gestion du suivi du temps, de l’immigration et du télétravail</p>
-        <p>Mobilité Internationale : Expatriés, Impatriés, VIE</p>
-        <p>Suivi et gestion des dossiers : sécurité sociale, factures, impôts, immigration</p>
-        <p>Projets Divers</p>
-        <p>Rédaction de l’affichage obligatoire (déménagement), RGPD</p>
-        <p>Rédaction de procédures liées au poste</p>
+            <?php endforeach;?>
+        </div>
+    </article>
 
-        <h4>Réceptionniste – Auberge de Jeunesse - Australie 2014</h4>
+    <!-- languages it -->
+    <article>
+        <h2>Intégration - Développement web</h2>
+        <div class="languages-it">
+            <?php foreach($aboutPictures as $picture): ?>
+            <div class="circular-sb">
+                <span><?=htmlspecialchars( $picture['percentage']) ?>%</span>
+                <div class="circle">
+                    <img class="small-language" src="<?=htmlspecialchars( $picture['src']) ?>"
+                        alt="<?=htmlspecialchars($picture['alt']) ?>">
+                </div>
+            </div>
+            <?php endforeach;?>
+        </div>
+    </article>
 
-        <h4>Chargée de Recrutement et Assistante RH 2012 à 2013</h4>
-        <p>MCNEXT (ESN Spécialiste Microsoft) => Infeeny INFORMATIQUE</p>
-        <p>Recrutement</p>
-        <p>Sourcing, entretien (téléphonique et face à face), compte-rendu d’entretien et suivi du candidat</p>
-        <p>Participation à des forums d’emploi / job dating ; relations écoles</p>
-        <p>Création de documents pour le recrutement : fiche d’appel, compte-rendu d'entretien</p>
-        <p>Administration du Personnel</p>
-        <p>Accueil des nouveaux salariés, gestion de la visite médicale</p>
+    <!-- Languages english, spanish, japanese-->
+    <article>
+        <h2>Langues</h2>
+        <div class="languages">
+            <?php foreach($aboutLanguages as $language): ?>
+            <p><img class="small-language" src="<?=htmlspecialchars($language['src']) ?>" alt="<?=htmlspecialchars($language['alt']) ?>"> <span> : <?=htmlspecialchars($language['level']) ?></span></p>
+            <?php endforeach;?>
+        </div>
+    </article>
+
+    <!-- Old jobs not IT -->
+    <article>
+        <h2>Mes anciens jobs et formations</h2>
+
+        <div class="timeline">
+            <?php foreach($aboutOld as $old): ?>
+
+            <?php if($old['type'] === "job" ) : ?>
+            <div class="container-about right">
+                <div class="content">
+                    <?php if($old['start_date'] === $old['end_date'] ) : ?>
+                    <h2><?=htmlspecialchars($old['start_date']) ?></h2>
+                    <?php else: ?>
+                    <h2><?=htmlspecialchars($old['start_date']) ?> - <?=htmlspecialchars($old['end_date'] ) ?></h2>
+                    <?php endif; ?>
+                    <h3><?=htmlspecialchars($old['name']) ?></h3>
+                    <h4><?=htmlspecialchars($old['location']) ?></h4>
+                    <p><?=htmlspecialchars($old['description']) ?></p>
+                </div>
+            </div>
+            <?php endif; ?>
+
+            <?php if($old['type'] === "formation" ) : ?>
+            <div class="container-about left">
+                <div class="content">
+                    <?php if($old['start_date'] === $old['end_date'] ) : ?>
+                    <h2><?=htmlspecialchars($old['start_date']) ?></h2>
+                    <?php else: ?>
+                    <h2><?=htmlspecialchars($old['start_date']) ?> - <?=htmlspecialchars($old['end_date'] ) ?></h2>
+                    <?php endif; ?>
+                    <h3><?=htmlspecialchars($old['name']) ?></h3>
+                    <h4><?=htmlspecialchars($old['location']) ?></h4>
+                    <p><?=htmlspecialchars($old['description']) ?></p>
+                </div>
+            </div>
+            <?php endif; ?>
+
+            <?php endforeach;?>
+        </div>
     </article>
 </section>
-

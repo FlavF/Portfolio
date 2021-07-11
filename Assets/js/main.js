@@ -29,7 +29,7 @@ function goingBackTop() {
 	document.documentElement.scrollTop = 0;
 }
 
-
+// Modal
 function showModal() {
 	console.log("hello modal");
 	try {
@@ -48,6 +48,8 @@ function hideModal() {
 const closeModal = (event) => {
 	modal.classList.add("hidden");
 };
+
+
 
 /*********CODE***********
  ***************************/

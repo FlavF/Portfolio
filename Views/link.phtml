@@ -1,14 +1,15 @@
 <h1 id="#links">Liens utiles</h1>
 <section>
+
+<!-- For each / grid ? -->
+<?php foreach($links as $link): ?>
     <table>
-        <caption>Categorie</caption>
+        <caption><?=htmlspecialchars($link['category']) ?></caption>
         <tbody>
             <tr>
-                <td><a href="lien">Nom du lien</a></td>
-            </tr>
-
+                <td><a href="<?=htmlspecialchars($link['url']) ?>" title="<?=htmlspecialchars($link['title']) ?>" target="_blank"><?=htmlspecialchars($link['link']) ?></a></td>
             </tr>
         </tbody>
     </table>
-
+    <?php endforeach; ?>
 </section>

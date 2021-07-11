@@ -10,7 +10,7 @@ class ModelManager
     {
         //connect to the database		  
         try {
-             $this-> bdd = new PDO('mysql:host=127.0.0.1;dbname=Flavia;charset=utf8','root');
+             $this-> bdd = new PDO('mysql:host=127.0.0.1;dbname=Portfolio;charset=utf8','root');
             
              //todo: Mettre la base de données sur l'IDE
             //$this-> bdd = new PDO('mysql:host=home.3wa.io:3307;dbname=live-44_flaviafon_yoga;charset=utf8','flaviafon','7cbc02aeNzM0YWIyZTllOWI0YjE5ODE0MWJlNzA366c6f0c4');
