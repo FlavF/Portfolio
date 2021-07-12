@@ -13,8 +13,8 @@ class AboutController extends FrontController
         $aboutIt = $model -> getIt();
 
         //get information for Language IT
-        $modelPicture = new PictureModel();
-        $aboutPictures = $modelPicture -> getPictures();
+        $modelPicture = new LanguagesItModel();
+        $aboutPictures = $modelPicture -> getLanguagesIt();
         
         //get information for Language
         $modelLanguage = new LanguagesModel();

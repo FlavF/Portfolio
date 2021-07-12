@@ -1,13 +1,13 @@
 <?php
 
-class PictureModel extends ModelManager
+class LanguagesItModel extends ModelManager
 {
     
     //show all pictures
-    public function getPictures()
+    public function getLanguagesIt()
     {
         $req = "SELECT src, alt, percentage, color
-        FROM  Pictures";
+        FROM  Languages_IT";
         
         return $this -> queryFetchAll($req);
     }

@@ -1,24 +1,24 @@
 <h1 id="#projects">Projets</h1>
+
+<!-- Filter -->
+=> créer des tags html, css et si coché voir seulement les projets liés
+
+
 <section>
+
+<?php foreach ($projects as $project): ?>
     <article class="project">
-        <h2>Velib</h2>
-        <p> résumé</p>
+        <h2><?=htmlspecialchars($project['project']) ?></h2>
+        <p><?=htmlspecialchars($project['description']) ?></p>
        <a href="">
-        <img src="" alt="image"></a>
+        <img src="<?=htmlspecialchars($project['src']) ?>" alt="<?=htmlspecialchars($project['alt']) ?>"></a>
+        <!-- Tag languages -->
+        <p> <?php foreach ($languages as $language): ?>
+            <?php if($language['project'] === $project['project']): ?>
+        <?=htmlspecialchars($language['languages_IT']) ?>
+        <?php endif; ?>
+        <?php endforeach; ?>
+        </p>
     </article>
-    <article class="project">
-        <h2>Annuaire</h2>
-        <p> résumé</p>
-       <a href="">
-        <img src="" alt="image"></a>
-    </article>
-    <article class="project">
-        <h2>Yogassages</h2>
-        <p> résumé</p>
-       <a href="">
-        <img src="" alt="image"></a>
-    </article>
-    <article class="project">
-        <h2></h2>
-    </article>
+<?php endforeach; ?>
 </section>

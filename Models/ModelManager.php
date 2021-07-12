@@ -13,7 +13,7 @@ class ModelManager
              $this-> bdd = new PDO('mysql:host=127.0.0.1;dbname=Portfolio;charset=utf8','root');
             
              //todo: Mettre la base de données sur l'IDE
-            //$this-> bdd = new PDO('mysql:host=home.3wa.io:3307;dbname=live-44_flaviafon_yoga;charset=utf8','flaviafon','7cbc02aeNzM0YWIyZTllOWI0YjE5ODE0MWJlNzA366c6f0c4');
+            //$this-> bdd = new PDO('mysql:host=db.3wa.io;dbname=flaviafon_Portfolio;charset=utf8','flaviafon','04b91770b2423ebdff05b9438daca50e');
         }
 
         catch (Exception $ex) 
