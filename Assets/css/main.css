@@ -171,7 +171,7 @@ p{
 ***************************************************************** */
 
 main{
-	padding: 1rem 1rem 1rem 15rem;
+	padding: 1rem 1rem 1rem 8rem;
 	/* height: 80vh; */
 }
 
@@ -180,15 +180,15 @@ main{
 /* Style the links inside the sidenav */
 .sidenav a {
 	position: absolute; 
-	left: -10rem; 
+	left: -15rem; 
 	transition: 0.3s; 
-	padding: 2.5rem; 
-	width: 15rem; 
+	padding: 2rem; 
+	width: 20rem; 
 	text-decoration: none; 
 	font-size: 2rem; 
 	color: var(--menu-color); 
 	border-radius: 5rem; 
-	line-height: 2rem;
+	line-height: 1.2rem;
 }
 
 .sidenav a:hover,
@@ -197,17 +197,16 @@ main{
 	left: 0;
 	color: var(--second-color); 	
 }
-
 .sidenav a .far,
-.sidenav a .fal,
 .sidenav a .fas{
-	text-align: right;
+	text-align: end;
+	color:var(--second-color);
+	display:inline;
 }
 
 .sidenav a p{
-	text-align: center;
+	text-align: end;
 }
-
 
 /* menu */
 .menu-one,
@@ -220,24 +219,25 @@ main{
 }
 
 .menu-one {
-	top: 10vh;
-}
-
-.menu-two {
 	top: 20vh;
 }
 
-.menu-three{
+.menu-two {
 	top: 30vh;
 }
 
-.menu-four{
+.menu-three{
 	top: 40vh;
 }
 
-.menu-five{
+.menu-four{
 	top: 50vh;
 }
+
+.menu-five{
+	top: 60vh;
+}
+
 
 /*  ************** Picture **************  */
 
@@ -246,7 +246,6 @@ main{
 	width: 35%;
 	height:auto;
 }
-
 
 .small-language{
 	width: auto;
@@ -363,43 +362,45 @@ footer .fas {
 	margin-bottom: 2rem;
 }
 
+/********* Cloud world *********/
+
 /* Pictures int/dev */
 .tags {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  max-width: 96rem;
-  margin: auto;
-  padding: 2rem 0 1rem;
-  list-style: none;
-  border: 0.2rem solid white;
-  border-radius: 5rem;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	max-width: 96rem;
+	margin: auto;
+	padding: 2rem 0 1rem;
+	list-style: none;
+	border: 0.5rem solid white;
+	border-radius: 5rem;
 }
 
 .tag {
-  display: flex;
-  align-items: center;
-  margin: 0.25rem 1rem;
+	display: flex;
+	align-items: center;
+	margin: 0.25rem 1rem;
 }
 
 .tag__link {
-  padding: 1rem 1rem 0;
-  transition: 0.3s;
-  text-decoration: none;
+	padding: 1rem 1rem 0;
+	transition: 0.3s;
+	text-decoration: none;
 }
 
 /* colour*/
 .tag:nth-of-type(4n+1) .tag__link {
-  color: var(--main-color);
+	color: var(--main-color);
 }
 .tag:nth-of-type(4n+2) .tag__link {
- color:var(--third-color);
+	color:var(--third-color);
 }
 .tag:nth-of-type(4n+3) .tag__link {
- color: var(--fourth-color);
+	color: var(--fourth-color);
 }
 .tag:nth-of-type(4n+4) .tag__link {
-  color: var(--sixth-color);
+	color: var(--sixth-color);
 }
 
 .tag:nth-of-type(4n+1) .tag__link:focus,
@@ -410,32 +411,32 @@ footer .fas {
 .tag:nth-of-type(4n+3) .tag__link:hover,
 .tag:nth-of-type(4n+4) .tag__link:focus,
 .tag:nth-of-type(4n+4) .tag__link:hover {
-  color:var(--second-color);
-  font-weight: bolder;
+	color:var(--second-color);
+	font-weight: bolder;
 }
 
 .tag:nth-of-type(4n+1) .tag__link:focus,
 .tag:nth-of-type(4n+1) .tag__link:hover {
-  box-shadow: inset 0 -2rem 0 0  var(--main-color);
+	box-shadow: inset 0 -3rem 0 0  var(--main-color);
 }
 
 .tag:nth-of-type(4n+2) .tag__link:focus,
 .tag:nth-of-type(4n+2) .tag__link:hover {
- box-shadow: inset 0 -2rem 0 0 var(--third-color);
+	box-shadow: inset 0 -3rem 0 0 var(--third-color);
 }
 
 .tag:nth-of-type(4n+3) .tag__link:focus,
 .tag:nth-of-type(4n+3) .tag__link:hover {
-  box-shadow: inset 0 -2rem 0 0 var(--fourth-color);
+	box-shadow: inset 0 -3rem 0 0 var(--fourth-color);
 }
 
 .tag:nth-of-type(4n+4) .tag__link:focus,
 .tag:nth-of-type(4n+4) .tag__link:hover {
-   box-shadow: inset 0 -2rem 0 0 var(--sixth-color);
+	box-shadow: inset 0 -3rem 0 0 var(--sixth-color);
 }
 /* ******************************************** */
 
-/* languages */
+/********* Languages *********/
 
 .languages{
 	display:flex;
@@ -443,11 +444,12 @@ footer .fas {
 	align-items: center;
 }
 .languages > p {
-display: flex;
-align-items: center;
+	display: flex;
+	align-items: center;
 }
 
 /* ******************************************** */
+/********* Timeline *********/
 
 /* The actual timeline (the vertical ruler) */
 .timeline {
@@ -464,16 +466,17 @@ align-items: center;
 	background-color: white;
 	top: 0;
 	bottom: 0;
-	left: 50%;
+	left: 3.1rem;
 	margin-left: -0.3rem;
 }
 
 /* Container around content */
 .container-about {
-	padding: 3rem 5rem;
 	position: relative;
 	background-color: inherit;
-	width: 50%;
+	width: 100%;
+	padding-left: 7rem;
+	padding-right: 2.5rem;
 }
 
 /* The circles on the timeline */
@@ -495,23 +498,20 @@ align-items: center;
 	left: 0;
 }
 
-/* Place the container to the right */
+/* Make all right containers behave like the left ones */
 .right {
-	left: 50%;
+	left: 0;
 }
 
-/* Add arrows to the left container (pointing right) */
-.left::before {
-	content: " ";
-	height: 0;
-	position: absolute;
-	top: 2.2rem;
-	width: 0;
-	z-index: 1;
-	right: 3rem;
-	border: medium solid white;
-	border-width: 1rem 0 1rem 1rem;
-	border-color: transparent transparent transparent white;
+/* Make sure all circles are at the same spot */
+.left::after, 
+.right::after {
+	left: 1.5rem;
+}
+
+/* Put space between the boxes */
+.container-about{
+	margin-bottom: 1rem;
 }
 
 /* Add arrows to the right container (pointing left) */
@@ -526,11 +526,6 @@ align-items: center;
 	border: medium solid white;
 	border-width: 1rem 1rem 1rem 0;
 	border-color: transparent white transparent transparent;
-}
-
-/* Fix the circle for containers on the right side */
-.right::after {
-	left: -1.6rem;
 }
 
 /* The actual content */
@@ -548,53 +543,17 @@ align-items: center;
 
 .content h4{
 	color:var(--main-color);
-	
 }
-
-
-/* Media queries - Responsive timeline on screens less than 600px wide */
-@media screen and (max-width: 600px) {
-	/* Place the timelime to the left */
-	.timeline::after {
-		left: 3.1rem;
-	}
-	
-	/* Full-width containers */
-	.container-about {
-		width: 100%;
-		padding-left: 7rem;
-		padding-right: 2.5rem;
-	}
-	
-	/* Make sure that all arrows are pointing leftwards */
-	.container-about::before {
-		left: 6rem;
-		border: medium solid white;
-		border-width: 1rem 1rem 1rem 0;
-		border-color: transparent white transparent transparent;
-	}
-	
-	/* Make sure all circles are at the same spot */
-	.left::after, 
-	.right::after {
-		left: 1.5rem;
-	}
-	
-	/* Make all right containers behave like the left ones */
-	.right {
-		left: 0%;
-	}
-}
-
 
 /* ******************************************** */
+/********* Bubble languages *********/
+
 /* Pictures int/dev */
 .languages-it{
- display: flex;
- justify-content: space-around;
- align-content: center;
+	display: flex;
+	justify-content: space-around;
+	align-content: center;
 }
-
 
 .circular-sb {
 	width: 15rem;
@@ -613,7 +572,7 @@ align-items: center;
 }
 
 /* small bubble */
- .circle {
+.circle {
 	width: 10rem;
 	height: 10rem;
 	position: absolute;
@@ -635,13 +594,104 @@ align-items: center;
 } 
 
 div.circular-sb > div > img {
-padding-top: 2.8rem;
+	padding-top: 2.8rem;
 }
 
 
+/* *****************************************************************
+*************************    PAGE : PROJECT *************************
+***************************************************************** */
+.filter-container {
+	overflow: hidden;
+}
+
+.btn-container{
+	margin-bottom: 2rem;
+}
+
+.filterDiv {
+	width: 30rem;
+	line-height: 10rem;
+	margin: 0.2rem;
+	display: none; /* Hidden by default */
+}
+
+/* The "show" class is added to the filtered elements */
+.show {
+	display: block;
+}
+
+/* Style the buttons */
+.btn {
+	border: none;
+	outline: none;
+	padding: 1.2rem 1.6rem;
+	background-color: var(--second-color);
+	cursor: pointer;
+}
+
+/* Add a light grey background on mouse-over */
+.btn:hover {
+	background-color:var(--third-color);
+	color: var(--second-color);
+}
+
+/* Add a dark background to the active button */
+.btn.active {
+	background-color: var(--fourth-color);
+	color: var(--second-color);
+}
+
+/* project box */
+.filter-container{
+	display:flex;
+	justify-content: space-around;
+	align-items: baseline;
+	flex-wrap: wrap;
+}
+
+.project{
+	border:solid 0.5rem var(--second-color);
+	border-radius:10%;
+	padding:1.2rem;
+	height : 50rem;
+	margin-bottom: 1rem;
+}
+
+.project-languages{
+	text-align: center;
+	color:var(--fourth-color);
+}
+
+
+/* *****************************************************************
+*************************    PAGE : LINKS *************************
+***************************************************************** */
+
+
+.links{
+	display:flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+.category{
+	border:solid 0.5rem var(--second-color);
+	border-radius:10%;
+	padding:1.2rem;
+	margin-bottom: 1rem;
+	width : 8rem;
+	margin-right: 0.5rem;
+}
+
+.category caption {
+	color:var(--fourth-color);
+	text-align:center;
+}
+
+
+
 /*      *************************************************         */
-
-
 
 /* *****************************************************************
 .......................  PC/DESKTOP VERSION  ....................... 
@@ -667,4 +717,64 @@ padding-top: 2.8rem;
 		width: 25%; 
 	}
 	
+	/* *****************************************************************
+	*************************    PAGE : About *************************
+	***************************************************************** */
+	/* Place the timelime to the left */
+	.timeline::after {
+		left: 50%;
+	}
+	
+	/* Full-width containers */
+	.container-about {
+		padding: 3rem 5rem;
+		width: 50%;
+	}
+	
+	/* Place the container to the right */
+	.right {
+		left: 50%;
+	}
+	
+	/* Fix the circle for containers on the middle side */
+	.left::after {
+		left: 1.5rem;
+	}
+	
+	.right::after {
+		left: -1.6rem;
+	}
+	
+	/* Add arrows to the left container (pointing right) */
+	.left::before {
+		content: " ";
+		height: 0;
+		position: absolute;
+		top: 2.2rem;
+		width: 0;
+		z-index: 1;
+		right: 3rem;
+		border: medium solid white;
+		border-width: 1rem 0 1rem 1rem;
+		border-color: transparent transparent transparent white;
+	}
+	
+	/* *****************************************************************
+	*************************    PAGE : LINKS *************************
+	***************************************************************** */
+	.links{
+		flex-wrap: nowrap;
+	}
+	
+	.category{
+		width:15rem;
+		margin-left:0;
+	}
+	
+	/* *****************************************************************
+	*************************    PAGE : PROJECT *************************
+	***************************************************************** */
+	.filter-container{
+		flex-wrap: nowrap;
+	}
 }

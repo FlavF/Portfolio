@@ -5,7 +5,7 @@ class ProjectModel extends ModelManager
 
      public function getProjects()
     {
-        $req = "SELECT DISTINCT Projects.name as project, description, Projects.src as src, Projects.alt as alt
+        $req = "SELECT DISTINCT Projects.name as project, description, Projects.src as src, Projects.alt as alt, data_base, data_base_alt
         FROM Projects";
 
         return $this -> queryFetchAll($req);
@@ -14,7 +14,7 @@ class ProjectModel extends ModelManager
     //show all items 
     public function getProjectsLanguages()
     {
-        $req = "SELECT DISTINCT  Projects.name as project,Languages_IT.name as languages_IT
+        $req = "SELECT DISTINCT Projects.name as project,Languages_IT.name as languages_IT
         FROM Projects_languages
         LEFT JOIN Projects
          ON Projects_languages.id_project = Projects.id_project

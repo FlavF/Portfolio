@@ -1,15 +1,29 @@
-<h1 id="#links">Liens utiles</h1>
-<section>
+<section >
+    <h1 id="#links">Liens utiles</h1>
 
-<!-- For each / grid ? -->
-<?php foreach($links as $link): ?>
-    <table>
-        <caption><?=htmlspecialchars($link['category']) ?></caption>
-        <tbody>
-            <tr>
-                <td><a href="<?=htmlspecialchars($link['url']) ?>" title="<?=htmlspecialchars($link['title']) ?>" target="_blank"><?=htmlspecialchars($link['link']) ?></a></td>
-            </tr>
-        </tbody>
-    </table>
-    <?php endforeach; ?>
+    <div class="links">
+    <!-- Category -->
+    <?php foreach($categories as $category): ?>
+    <article class="category">
+        <table>
+            <caption><?=htmlspecialchars($category['category']) ?></caption>
+            <tbody>
+                <?php foreach($links as $link): ?>
+                <tr>
+                    <?php if(isset($link['link'])) :?>
+                        <?php if($category['id_category'] === $link['id_category']) :?>
+                            <td>
+                                <a href="<?=htmlspecialchars($link['url']) ?>" title="<?=htmlspecialchars($link['title']) ?>" target="_blank"><?=htmlspecialchars($link['link']) ?></a>
+                            </td>
+                        <?php endif; ?>
+                    <?php else: ?>
+                        <td> Pas de liens ajoutés</td>
+                    <?php endif; ?>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </article>
+     <?php endforeach; ?>
+     </div>
 </section>

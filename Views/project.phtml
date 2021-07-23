@@ -1,24 +1,47 @@
 <h1 id="#projects">Projets</h1>
 
-<!-- Filter -->
-=> créer des tags html, css et si coché voir seulement les projets liés
+<!-- Filter button-->
+<div id="myBtnContainer" class="btn-container">
+    <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+    <?php foreach ($LanguagesIt as $it): ?>
+    <button class="btn"
+        onclick="filterSelection('<?=htmlspecialchars($it['name']) ?>')"><?=htmlspecialchars($it['name']) ?></button>
+    <?php endforeach; ?>
+</div>
 
-
-<section>
-
-<?php foreach ($projects as $project): ?>
-    <article class="project">
-        <h2><?=htmlspecialchars($project['project']) ?></h2>
-        <p><?=htmlspecialchars($project['description']) ?></p>
-       <a href="">
-        <img src="<?=htmlspecialchars($project['src']) ?>" alt="<?=htmlspecialchars($project['alt']) ?>"></a>
-        <!-- Tag languages -->
-        <p> <?php foreach ($languages as $language): ?>
+<section class="filter-container">
+    <!-- project filter by language -->
+    <?php foreach ($projects as $project): ?>
+    <article class="project filterDiv <?php foreach ($languages as $language): ?>
             <?php if($language['project'] === $project['project']): ?>
         <?=htmlspecialchars($language['languages_IT']) ?>
         <?php endif; ?>
-        <?php endforeach; ?>
+        <?php endforeach; ?>">
+
+        <!-- Project name  -->
+        <h2><?=htmlspecialchars($project['project']) ?></h2>
+        
+        <!-- Tag languages -->
+        <p class="project-languages"> <?php foreach ($languages as $language): ?>
+            <?php if($language['project'] === $project['project']): ?>
+            <?=htmlspecialchars($language['languages_IT']) ?>
+            <?php endif; ?>
+            <?php endforeach; ?>
         </p>
+
+        <!-- Project  description -->
+        <p><?=htmlspecialchars($project['description']) ?></p>
+     
+        <!-- link project-->
+        <a href="<?=htmlspecialchars($project['src']) ?>" target="_blank">
+            <img src="" alt="<?=htmlspecialchars($project['alt']) ?>"></a>
+
+            <!-- Database -->
+            <?php if($project['data_base']): ?>
+                <a href="<?=htmlspecialchars($project['data_base']) ?>" target="_blank">
+                 <img src="<?=htmlspecialchars($project['data_base']) ?>" alt="<?=htmlspecialchars($project['data_base_alt']) ?>"></a>
+            <?php endif; ?>
+        
     </article>
-<?php endforeach; ?>
+    <?php endforeach; ?>
 </section>

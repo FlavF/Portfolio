@@ -11,5 +11,16 @@ class LanguagesItModel extends ModelManager
         
         return $this -> queryFetchAll($req);
     }
+
+
+     //show all pictures
+    public function getnameLanguagesIt()
+    {
+        $req = "SELECT name
+        FROM  Languages_IT";
+        
+        return $this -> queryFetchAll($req);
+    }
+    
     
 }
