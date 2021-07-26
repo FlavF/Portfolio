@@ -12,7 +12,7 @@ class ProjectController extends FrontController
         $model = new ProjectModel();
         $projects = $model -> getProjects();
 
-        //project tables
+        //project and table tables
         $modelLanguages = new ProjectModel();
         $languages = $modelLanguages -> getProjectsLanguages();
                

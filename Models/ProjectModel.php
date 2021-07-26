@@ -18,8 +18,8 @@ class ProjectModel extends ModelManager
         FROM Projects_languages
         LEFT JOIN Projects
          ON Projects_languages.id_project = Projects.id_project
-         LEFT JOIN Languages_IT 
-          ON Projects_languages.id_language_it = Languages_IT.id_language_it";
+        LEFT JOIN Languages_IT 
+         ON Projects_languages.id_language_it = Languages_IT.id_language_it";
 
         return $this -> queryFetchAll($req);
     }
