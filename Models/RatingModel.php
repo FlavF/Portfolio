@@ -7,7 +7,7 @@ class RatingModel extends ModelManager
 
     public function getStar1()
     {
-        $req = "SELECT SUM(star_1)
+        $req = "SELECT SUM(star_1) as sum1
         FROM Ratings";
 
         return $this -> queryFetchAll($req);
@@ -15,7 +15,7 @@ class RatingModel extends ModelManager
 
         public function getStar2()
     {
-        $req = "SELECT SUM(star_2)
+        $req = "SELECT SUM(star_2)as sum2
         FROM Ratings";
 
         return $this -> queryFetchAll($req);
@@ -23,7 +23,7 @@ class RatingModel extends ModelManager
 
         public function getStar3()
     {
-        $req = "SELECT SUM(star_3)
+        $req = "SELECT SUM(star_3)as sum3
         FROM Ratings";
 
         return $this -> queryFetchAll($req);
@@ -31,7 +31,7 @@ class RatingModel extends ModelManager
 
         public function getStar4()
     {
-        $req = "SELECT SUM(star_4)
+        $req = "SELECT SUM(star_4)as sum4
         FROM Ratings";
 
         return $this -> queryFetchAll($req);
@@ -39,19 +39,30 @@ class RatingModel extends ModelManager
 
         public function getStar5()
     {
-        $req = "SELECT SUM(star_5)
+        $req = "SELECT SUM(star_5)as sum5
         FROM Ratings";
 
         return $this -> queryFetchAll($req);
     }
 
+    // calcul
         public function getStarSum()
     {
-        $req = "SELECT SUM(id_rating)
+        $req = "SELECT COUNT(id_rating) as sum
         FROM Ratings";
 
         return $this -> queryFetchAll($req);
     }
+
+       // todo
+    //     public function getStarAverage()
+    // {
+     
+    //     return $this -> queryFetchAll($req);
+    // }
+
+
+
 
 // Add stars
 

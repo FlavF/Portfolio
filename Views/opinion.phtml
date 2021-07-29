@@ -106,7 +106,15 @@
   </div>
 </div>
     </form>
-    <p>4.1 average based on 254 reviews.</p>
+
+
+
+
+    <!-- Results --> 
+     <?php foreach($starSum as $sum):?>
+      <p>Moyenne de (mettre la moyenne)sur <?=htmlspecialchars($sum['sum'])?>
+      <?php endforeach ;?>
+     notes.</p>
 
     <div class="row-star">
         <!-- 5 stars -->
@@ -129,7 +137,10 @@
           <path d="M256 476.2a70 70 0 0 0 53.3-25.5 34.6 34.6 0 0 0-58-25 34.4 34.4 0 0 0-47.8 26 69.9 69.9 0 0 0 52.6 24.5z" fill="#e24b4b"/>
           <path d="M290.3 434.8c-1 3.4-5.8 5.2-11 3.9s-8.4-5.1-7.4-8.7c.8-3.3 5.7-5 10.7-3.8 5.1 1.4 8.5 5.3 7.7 8.6z" fill="#fff" opacity=".2"/>
         </svg>
-            <span>150 nb php</span>
+              <?php foreach($star5 as $s5): ?>
+            <span><?=htmlspecialchars($s5['sum5'])?></span>
+            <?php endforeach;?>
+
         </div>
 
         <!-- 4 stars -->
@@ -146,7 +157,9 @@
           <path d="M381.7 374.1c-30.2 35.9-75.3 64.4-125.7 64.4s-95.4-28.5-125.8-64.2a17.6 17.6 0 0 1 16.5-28.7 627.7 627.7 0 0 0 218.7-.1c16.2-2.7 27 16.1 16.3 28.6z" fill="#3e4347"/>
           <path d="M256 438.5c25.7 0 50-7.5 71.7-19.5-9-33.7-40.7-43.3-62.6-31.7-29.7 15.8-62.8-4.7-75.6 34.3 20.3 10.4 42.8 17 66.5 17z" fill="#e24b4b"/>
         </svg>
-            <span>150 nb php</span>
+             <?php foreach($star4 as $s4): ?>
+            <span><?=htmlspecialchars($s4['sum4'])?></span>
+            <?php endforeach;?>
         </div>
 
 
@@ -168,7 +181,9 @@
     <ellipse cx="155.6" cy="205.3" rx="44.2" ry="44.2" fill="#3e4347"/>
     <ellipse transform="scale(-1) rotate(45 454 -421.3)" cx="174.5" cy="188" rx="12" ry="8.1" fill="#fff"/>
   </svg>
-            <span>150 nb php</span>
+            <?php foreach($star3 as $s3): ?>
+            <span><?=htmlspecialchars($s3['sum3'])?></span>
+            <?php endforeach;?>
         </div>
 
 
@@ -187,7 +202,9 @@
           <circle cx="168.5" cy="260.4" r="36.2" fill="#3e4347"/>
           <ellipse transform="rotate(-135 182.1 246.7)" cx="182.1" cy="246.7" rx="10" ry="6.5" fill="#fff"/>
         </svg>
-            <span>150 nb php</span>
+            <?php foreach($star2 as $s2): ?>
+            <span><?=htmlspecialchars($s2['sum2'])?></span>
+            <?php endforeach;?>
         </div>
 
 
@@ -206,7 +223,9 @@
           <path d="M115.8 246.1a38.5 38.5 0 0 0 38.7 38.6 38.5 38.5 0 0 0 38.6-38.6 38.6 38.6 0 1 0-77.3 0z" fill="#3e4347"/>
           <path d="M131.6 241.1c3.2 3.2 9.9 1.7 14.9-3.2 4.8-4.8 6.2-11.5 3-14.7-3.3-3.4-10-2-14.9 2.9-4.9 5-6.4 11.7-3 15z" fill="#fff"/>
         </svg>
-            <span>150 nb php</span>
+             <?php foreach($star1 as $s1): ?>
+            <span><?=htmlspecialchars($s1['sum1'])?></span>
+            <?php endforeach;?>
         </div>
 
 

@@ -20,13 +20,13 @@
         
 <!-- picture -->
 <figure>
-    <a href="">
         <img src="<?=htmlspecialchars($photo['src']) ?>" alt="<?=htmlspecialchars($photo['alt']) ?>">
-    </a>
-    <figcaption><?=htmlspecialchars($photo['name']) ?></figcaption>
+    
+    <figcaption>
+        <div class="fig-title"><?=htmlspecialchars($photo['name']) ?></div>
+    </figcaption>
 </figure>
 
-  
      </article>
     <?php endforeach; ?>
 </section>
