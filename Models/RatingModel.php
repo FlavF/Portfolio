@@ -45,7 +45,7 @@ class RatingModel extends ModelManager
         return $this -> queryFetchAll($req);
     }
 
-    // calcul
+    // calcul Sum of click
         public function getStarSum()
     {
         $req = "SELECT COUNT(id_rating) as sum
@@ -54,12 +54,14 @@ class RatingModel extends ModelManager
         return $this -> queryFetchAll($req);
     }
 
-       // todo
-    //     public function getStarAverage()
-    // {
+       // calcul average
+        public function getStarAverage()
+    {
+        $req = "SELECT AVG(value) as avg
+        FROM Ratings";
      
-    //     return $this -> queryFetchAll($req);
-    // }
+        return $this -> queryFetchAll($req);
+    }
 
 
 

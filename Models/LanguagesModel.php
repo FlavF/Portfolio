@@ -7,7 +7,7 @@ class LanguagesModel extends ModelManager
     public function getLanguages()
     {
         $req = "SELECT name,src, alt, level
-        FROM  Languages";
+        FROM  CV_Languages";
         
         return $this -> queryFetchAll($req);
     }

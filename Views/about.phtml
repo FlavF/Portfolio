@@ -14,7 +14,7 @@
             <ul class="tags">
                 <?php foreach($cloud as $tag): ?>
                 <li class="tag">
-                    <a class="tag__link" href="#">
+                    <a class="tag__link" href="https://pixabay.com/fr/images/search/<?=htmlspecialchars($tag['tag'])?>/" target="_blank">
                         <?=htmlspecialchars($tag['tag'])?>
                     </a>
                 </li>

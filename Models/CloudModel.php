@@ -7,7 +7,7 @@ class CloudModel extends ModelManager
     public function getCloud()
     {
         $req = "SELECT DISTINCT tag
-        FROM  Cloud;";
+        FROM  CV_Cloud;";
 
         return $this -> queryFetchAll($req);
     }

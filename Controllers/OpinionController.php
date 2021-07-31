@@ -29,8 +29,8 @@ class OpinionController extends FrontController
         $starSum = $model -> getStarSum();
 
          // average all stars 
-        // $model = new RatingModel();
-        // $starAverage = $model -> getStarAverage();
+        $model = new RatingModel();
+        $starAverage = $model -> getStarAverage();
 
 
         // templates page

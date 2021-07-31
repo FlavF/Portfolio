@@ -14,7 +14,7 @@ class ProjectController extends FrontController
 
         //project and table tables
         $modelLanguages = new ProjectModel();
-        $languages = $modelLanguages -> getProjectsLanguages();
+        $languages = $modelLanguages -> getProjectsCategories();
                
         // templates page
         $template = "project.phtml";

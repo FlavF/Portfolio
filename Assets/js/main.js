@@ -94,6 +94,11 @@ function removeClass(element, name) {
 	element.className = arr1.join(" ");
 }
 
+// Add star to database
+// when click to star_X add 1 to database and value = X
+
+
+
 /*********CODE***********
  ***************************/
 document.addEventListener("DOMContentLoaded", function () {
@@ -126,4 +131,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			});
 		}
 	}
+
+	
+
 });

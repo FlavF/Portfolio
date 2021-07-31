@@ -189,6 +189,7 @@ main{
 	color: var(--menu-color); 
 	border-radius: 5rem; 
 	line-height: 1.2rem;
+	z-index:100;
 }
 
 .sidenav a:hover,
