@@ -1,10 +1,7 @@
-/**
- * *** VARIABLES***********
- * *************************
- *
- * @format
- */
+/* *****VARIABLES***********
+ **************************** */
 
+// **** All pages : arrow up when too far down  ****
 let buttonTop = document.getElementById("button-top");
 
 // **** Page : Modal ****
@@ -15,11 +12,12 @@ let close = document.getElementsByClassName("close")[0]; //to close modal
 
 // **** Filter : page Projects and Photos ****
 let btnContainer = document.getElementById("myBtnContainer");
-let btns = btnContainer.getElementsByClassName("btn");
+
 
 /******FUNCTIONS***********
  ***************************/
 
+// **** All pages : arrow up when too far down ****
 // show button scroll when the scrolling down go over 20px
 function scrolling() {
 	if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
@@ -35,16 +33,15 @@ function goingBackTop() {
 	document.documentElement.scrollTop = 0;
 }
 
-// Modal
+// **** Page : Modal ****
 function showModal() {
 	console.log("hello modal");
 	try {
 		modal.classList.remove("hidden");
-		console.log(modal);
+		// console.log(modal);
 	} catch (error) {
-		console.log("il y a une error");
+		console.log("il y a une erreur");
 	}
-	
 }
 
 function hideModal() {
@@ -55,11 +52,11 @@ const closeModal = (event) => {
 	modal.classList.add("hidden");
 };
 
-
-//Filter in page Project
+// **** Filter : page Projects and Photos ****
 filterSelection("all");
+
 function filterSelection(c) {
-	var x, i;
+	let x, i;
 	x = document.getElementsByClassName("filterDiv");
 	if (c == "all") c = "";
 	// Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
@@ -94,14 +91,10 @@ function removeClass(element, name) {
 	element.className = arr1.join(" ");
 }
 
-// Add star to database
-// when click to star_X add 1 to database and value = X
-
-
-
 /*********CODE***********
  ***************************/
 document.addEventListener("DOMContentLoaded", function () {
+	// **** All pages : arrow up when too far down  ****
 	//to show button when scroll down
 	window.onscroll = function () {
 		scrolling();
@@ -110,6 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	// going back top of the page
 	buttonTop.addEventListener("click", goingBackTop);
 
+	// **** Page : Modal ****
 	// open modal
 	message.addEventListener("click", showModal);
 
@@ -119,10 +113,10 @@ document.addEventListener("DOMContentLoaded", function () {
 		window.addEventListener("click", closeModal);
 	}
 
-	// filter
+	// **** Filter : page Projects and Photos ****
 	// Add active class to the current control button (highlight it)
-	
-	if (btnContainer){
+	if (btnContainer) {
+		let btns = btnContainer.getElementsByClassName("btn");
 		for (let i = 0; i < btns.length; i++) {
 			btns[i].addEventListener("click", function () {
 				let current = document.getElementsByClassName("active");
@@ -132,6 +126,5 @@ document.addEventListener("DOMContentLoaded", function () {
 		}
 	}
 
-	
 
 });

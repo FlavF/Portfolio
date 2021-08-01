@@ -62,6 +62,11 @@ else
             $controller->display();
             break;   
 
+
+            case 'addStars' :
+                $controller = new OpinionController();
+                $controller->addStars();
+
                // **** Message **** 
              // get page message  
         case 'message':

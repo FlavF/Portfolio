@@ -1,7 +1,7 @@
 <h1 id="#opinion">Votre avis</h1>
 
 <section>
-    <form action="addStars">
+    <form action="index.php?page=addStars" method="POST">
         <div class="container-opinion">
             <div class="feedback">
                 <div class="rating">
@@ -15,6 +15,7 @@
                     <label for="rating-2"></label>
                     <input type="radio" name="rating" id="rating-1" value="1">
                     <label for="rating-1"></label>
+
                     <div class="emoji-wrapper">
                         <div class="emoji">
                             <svg class="rating-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -179,9 +180,11 @@
                         </div>
                     </div>
                 </div>
+                <input class="submit-btn" type="submit" value="J'ai fait mon choix">
             </div>
         </div>
     </form>
+
 
 
 
