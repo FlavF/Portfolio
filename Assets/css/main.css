@@ -36,10 +36,8 @@ html {
 	
 	/* Background Color */
 	--main-background-color:var(--fifth-color);
-	
-	/* Percentage background color */
-	--percentageColor: linear-gradient(90deg, var(--fourth-color) 90%, var(--fifth-color) 90%);
-	
+			
+
 	/*Size Mobile */
 	--main-size: 1rem;
 	--line-size: 1rem;
@@ -266,7 +264,7 @@ main{
 
 footer {
 	/* position: fixed; */
-	postion:relative;
+	position:relative;
 	left: 0;
 	bottom: 0;
 	width: 100%;
@@ -542,11 +540,36 @@ footer .fas {
 	margin-bottom: 1rem;
 }
 
-.circular-sb:hover {
-	background-image: var(--percentageColor);
-	color:var(--second-color);
-	transition: 2s all;
+/* Todo: mettre les % correctements */
+.circular-sb:hover{
+color:var(--second-color);
+transition: 2s all;	
+} 
+
+.40:hover {
+background-image: linear-gradient(90deg, var(--fourth-color) 40%, var(--fifth-color) 40%);
 }
+
+.50:hover {
+background-image: linear-gradient(90deg, var(--fourth-color) 50%, var(--fifth-color) 50%);
+}
+
+.60:hover {
+background-image: linear-gradient(90deg, var(--fourth-color) 60%, var(--fifth-color) 60%);
+}
+
+.65:hover {
+background-image: linear-gradient(90deg, var(--fourth-color) 65%, var(--fifth-color) 65%);
+}
+
+.70:hover {
+background-image: linear-gradient(90deg, var(--fourth-color) 70%, var(--fifth-color) 70%);
+}
+
+.80:hover {
+background-image: linear-gradient(90deg, var(--fourth-color) 80%, var(--fifth-color) 80%);
+}
+
 
 /* small bubble */
 .circle {

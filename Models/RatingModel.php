@@ -62,15 +62,27 @@ class RatingModel extends ModelManager
         
         return $this -> queryFetchAll($req);
     }
+
+
+    // Get IP adress to ban old Ip to vote again
+    public function getStarAllIp($ip){
+        $req = "SELECT ip_address
+        FROM Ratings
+        WHERE ip_address = ?";
+        
+        $param = [$ip];
+        
+        return $this -> queryFetchAll($req, $param);
+    }
     
     // Add stars
     
-    public function addStar(?int $star1,?int $star2,?int $star3,?int $star4,?int $Star5,int $value)
+    public function addStar(?int $star1,?int $star2,?int $star3,?int $star4,?int $Star5,int $value, string $ip)
     {
-        $req = "INSERT INTO Ratings(star_1,star_2,star_3,star_4,star_5,value) 
-        VALUES(?,?,?,?,?,?)";
+        $req = "INSERT INTO Ratings(star_1,star_2,star_3,star_4,star_5,value,ip_address) 
+        VALUES(?,?,?,?,?,?,?)";
         
-        $param = [$star1,$star2,$star3,$star4,$Star5,$value];
+        $param = [$star1,$star2,$star3,$star4,$Star5,$value,$ip];
         $this-> query($req,$param);
     }
     

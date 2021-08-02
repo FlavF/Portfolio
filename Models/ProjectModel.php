@@ -14,12 +14,12 @@ class ProjectModel extends ModelManager
     //show all items 
     public function getProjectsCategories()
     {
-        $req = "SELECT DISTINCT Projects.name as project,Languages_IT.name as languages_IT
+        $req = "SELECT DISTINCT Projects.name as project,Languages_it.name as languages_IT
         FROM Projects_categories
         LEFT JOIN Projects
          ON Projects_categories.id_project = Projects.id_project
-        LEFT JOIN Languages_IT 
-         ON Projects_categories.id_language_it = Languages_IT.id_language_it";
+        LEFT JOIN Languages_it 
+         ON Projects_categories.id_language_it = Languages_it.id_language_it";
 
         return $this -> queryFetchAll($req);
     }

@@ -1,8 +1,18 @@
 <div class="header">
     <a href="index.php" alt="page d'accueil"><img class="logo" src="Assets/img/logo/LogoFlaviaDev-1.png" alt="logo"></a>
+    <p> <?php
+setlocale(LC_TIME, 'fr_FR');
+date_default_timezone_set('Europe/Paris');
+echo strftime('%A %d %B %Y, %H:%M');
+?> </p>
 
-    <p class="browser"> <span class="bold">Bonjour et Bienvenue.</span> Pour vous connecter à ce portfolio, vous utilisez :
+    <p class="browser"> <span class="bold">Bonjour et Bienvenue.</span> Pour vous connecter à ce portfolio, vous
+        utilisez :
         <?= $_SERVER['HTTP_USER_AGENT'] . "\n\n";?>
     </p>
+
+
+
+
 
 </div>

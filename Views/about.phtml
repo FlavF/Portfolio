@@ -70,8 +70,8 @@
         <h2>Intégration - Développement web</h2>
         <div class="languages-it">
             <?php foreach($aboutPictures as $picture): ?>
-            <div class="circular-sb">
-                <span><?=htmlspecialchars( $picture['percentage']) ?>%</span>
+            <div class="circular-sb <?=htmlspecialchars($picture['percentage']) ?>">
+                <span><?=htmlspecialchars($picture['percentage']) ?>%</span>
                 <div class="circle">
                     <img class="small-language" src="<?=htmlspecialchars( $picture['src']) ?>"
                         alt="<?=htmlspecialchars($picture['alt']) ?>">

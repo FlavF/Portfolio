@@ -15,9 +15,8 @@ class LinkModel extends ModelManager
     //show links list
     public function getCategories()
     {
-        $req = "SELECT DISTINCT id_category, category
-        FROM  Links_categories
-        ORDER by number";
+        $req = "SELECT id_category, category
+        FROM  Links_categories";
 
         return $this -> queryFetchAll($req);
     }
