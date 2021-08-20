@@ -2,16 +2,17 @@
     <h1 id="#links">Liens utiles</h1>
 
     <div class="links">
-    <!-- Category -->
-    <?php foreach($categories as $category): ?>
+    
+    <!-- Tags -->
+    <?php foreach($tags as $tag): ?>
     <article class="category">
         <table>
-            <caption><?=htmlspecialchars($category['category']) ?></caption>
+            <caption><?=htmlspecialchars($tag['tag']) ?></caption>
             <tbody>
                 <?php foreach($links as $link): ?>
                 <tr>
                     <?php if(isset($link['link'])) :?>
-                        <?php if($category['id_category'] === $link['id_category']) :?>
+                        <?php if($tag['id_tag'] === $link['id_tag']) :?>
                             <td>
                                 <a href="<?=htmlspecialchars($link['url']) ?>" title="<?=htmlspecialchars($link['title']) ?>" target="_blank"><?=htmlspecialchars($link['link']) ?></a>
                             </td>

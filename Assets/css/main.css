@@ -170,6 +170,7 @@ p{
 
 main{
 	padding: 1rem 1rem 1rem 8rem;
+	scroll-behavior:smooth;
 	/* height: 80vh; */
 }
 
@@ -363,6 +364,17 @@ footer .fas {
 .page-about > article > h2{
 	margin-bottom: 2rem;
 }
+
+/********* Link to download CV *********/
+
+
+.download-cv{
+	text-decoration:none;
+	color:var(--third-color);
+	margin-left: 70vw;
+}
+
+
 
 /********* Cloud world *********/
 
@@ -687,11 +699,9 @@ div.circular-sb > div > img {
 	font-weight: 700;
 }
 
-/*todo : à faire fonctionner */
-.photo img:hover{
-	width:200% ;
-	height:auto;
-}
+/* todo:zoom on picture */
+
+
 
 /* *****************************************************************
 *************************    PAGE : LINKS *************************
@@ -702,6 +712,7 @@ div.circular-sb > div > img {
 	display:flex;
 	justify-content: space-around;
 	flex-wrap: wrap;
+	flex:5 ;
 }
 
 .category{
@@ -982,9 +993,7 @@ div.circular-sb > div > img {
 	/* *****************************************************************
 	*************************    PAGE : LINKS *************************
 	***************************************************************** */
-	.links{
-		flex-wrap: nowrap;
-	}
+	
 	
 	.category{
 		width:15rem;

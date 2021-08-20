@@ -4,9 +4,9 @@ class LinkController extends FrontController
 {
     public function display()
     {
-        // Categories table
+        // Tags table
         $model = new LinkModel();
-        $categories = $model -> getCategories();
+        $tags = $model -> getTags();
 
         // Links table
         $model = new LinkModel();
