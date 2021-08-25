@@ -6,14 +6,12 @@ class LinkModel extends ModelManager
     //show links list
     public function getLinks()
     {
-        $req = "SELECT DISTINCT link, url, title, id_link_tag as id_tag
+        $req = "SELECT DISTINCT link, url, title, id_link_tag as id_tag, level
         FROM  Links";
     
 
         return $this -> queryFetchAll($req);
     }
-
-
 
     //show links list
     public function getTags()
@@ -24,10 +22,15 @@ class LinkModel extends ModelManager
         return $this -> queryFetchAll($req);
     }
     
-
-    
-
-
-
-
+ // add link
+    public function addLink(string $link,string $url,string $title,int $tag,int $level)
+    {
+        $req = "INSERT INTO Links (link, url, title, id_link_tag, level) 
+        VALUES(?,?,?,?,?)";
+        
+        $parameters = [$link,$url,$title,$tag,$level];
+        
+        $this-> query($req,$parameters);
+    }
+ 
 }

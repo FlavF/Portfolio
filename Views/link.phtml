@@ -1,30 +1,76 @@
-<section >
+<section>
     <h1 id="#links">Liens utiles</h1>
 
+    <!-- ADD Link -->
+    <div>
+        <h2>Proposer un lien</h2>
+        <form action="index.php?page=addLink" method="POST">
+            <!-- Choose Category-->
+            <p>
+                <label for="id_tag">Lié à la catégorie :</label>
+                <select name="id_tag" id="id_tag">
+                    <?php foreach($tags as $tag ): ?>
+                    <option value="<?=htmlspecialchars($tag['id_tag']) ?>">
+                        <?=htmlspecialchars($tag['tag']) ?>
+                    </option>
+                    <?php endforeach; ?>
+                </select>
+            </p>
+            <!-- Link name -->
+            <p>
+                <label for="link">Nom du lien</label>
+                <input type="text" name="link" id="link">
+            </p>
+            <!-- url -->
+            <p>
+                <label for="url">Le lien</label>
+                <input type="text" name="url" id="url">
+            </p>
+            <!-- title/comment-->
+            <p>
+                <legend for="title">Texte decrivant le lien</legend>
+                <Textarea id="title" name="title" rows="5" cols="33"></Textarea>
+            </p>
+            <!-- submit the form-->
+            <p>
+                <button type="submit">Ajouter</button>
+            </p>
+        </form>
+        <?php if(isset($_GET['answer'])): ?>
+            <?=$_GET['answer'] ?>
+        <?php endif; ?>
+    </div>
+
+<!-- List of links -->
+    <h2>Les liens</h2>
     <div class="links">
-    
-    <!-- Tags -->
-    <?php foreach($tags as $tag): ?>
-    <article class="category">
-        <table>
-            <caption><?=htmlspecialchars($tag['tag']) ?></caption>
-            <tbody>
-                <?php foreach($links as $link): ?>
-                <tr>
-                    <?php if(isset($link['link'])) :?>
+        <!-- Tags -->
+        <?php foreach($tags as $tag): ?>
+        <article class="category">
+            <table>
+                <!-- Category -->
+                <caption><?=htmlspecialchars($tag['tag']) ?></caption>
+                <tbody>
+                    <?php foreach($links as $link): ?>
+                    <tr>
+                        <?php if(isset($link['link'])) :?>
+                        <?php if($link['level'] == 1) :?>
                         <?php if($tag['id_tag'] === $link['id_tag']) :?>
-                            <td>
-                                <a href="<?=htmlspecialchars($link['url']) ?>" title="<?=htmlspecialchars($link['title']) ?>" target="_blank"><?=htmlspecialchars($link['link']) ?></a>
-                            </td>
+                        <td>
+                            <!-- Link -->
+                            <a href="<?=htmlspecialchars($link['url']) ?>"
+                                title="<?=htmlspecialchars($link['title']) ?>"
+                                target="_blank"><?=htmlspecialchars($link['link']) ?></a>
+                        </td>
                         <?php endif; ?>
-                    <?php else: ?>
-                        <td> Pas de liens ajoutés</td>
-                    <?php endif; ?>
-                </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-    </article>
-     <?php endforeach; ?>
-     </div>
+                        <?php endif; ?>
+                        <?php endif; ?>
+                    </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </article>
+        <?php endforeach; ?>
+    </div>
+
 </section>

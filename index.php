@@ -56,6 +56,13 @@ else
             $controller->display();
             break;   
 
+            
+        ///page add Link
+        case 'addLink':
+            $controller = new LinkController();
+            $controller->add();
+            break;  
+
         ///page Opinion
         case 'opinion':
             $controller = new OpinionController();
@@ -100,10 +107,10 @@ else
             break;
 
         // sign in the session when submit index.php?page=signIn on formRegisterUser page 
-        case 'signIn':
-            $controller = new BackUserController();
-            $controller->signIn();
-            break;
+        // case 'signIn':
+        //     $controller = new BackUserController();
+        //     $controller->signIn();
+        //     break;
                     
      //   case 'signOut':
      //       $controller = new BackUserController();
