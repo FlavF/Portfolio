@@ -32,7 +32,6 @@ print_r($browser);
 
 
 
-
     //cookie : don't eat it
     public function createCookie()
     {

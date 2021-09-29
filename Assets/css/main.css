@@ -36,8 +36,8 @@ html {
 	
 	/* Background Color */
 	--main-background-color:var(--fifth-color);
-			
-
+	
+	
 	/*Size Mobile */
 	--main-size: 1rem;
 	--line-size: 1rem;
@@ -65,7 +65,7 @@ body {
 	font-size : var(--main-size);
 	font-family: serif;
 	background-color: var(--main-background-color);
-	text-align: justify;
+	/* text-align: justify; */
 	/*height: 100vh;
 	width: 100vw;*/
 }
@@ -554,32 +554,32 @@ footer .fas {
 
 /* Todo: mettre les % correctements */
 .circular-sb:hover{
-color:var(--second-color);
-transition: 2s all;	
+	color:var(--second-color);
+	transition: 2s all;	
 } 
 
 .40:hover {
-background-image: linear-gradient(90deg, var(--fourth-color) 40%, var(--fifth-color) 40%);
+	background-image: linear-gradient(90deg, var(--fourth-color) 40%, var(--fifth-color) 40%);
 }
 
 .50:hover {
-background-image: linear-gradient(90deg, var(--fourth-color) 50%, var(--fifth-color) 50%);
+	background-image: linear-gradient(90deg, var(--fourth-color) 50%, var(--fifth-color) 50%);
 }
 
 .60:hover {
-background-image: linear-gradient(90deg, var(--fourth-color) 60%, var(--fifth-color) 60%);
+	background-image: linear-gradient(90deg, var(--fourth-color) 60%, var(--fifth-color) 60%);
 }
 
 .65:hover {
-background-image: linear-gradient(90deg, var(--fourth-color) 65%, var(--fifth-color) 65%);
+	background-image: linear-gradient(90deg, var(--fourth-color) 65%, var(--fifth-color) 65%);
 }
 
 .70:hover {
-background-image: linear-gradient(90deg, var(--fourth-color) 70%, var(--fifth-color) 70%);
+	background-image: linear-gradient(90deg, var(--fourth-color) 70%, var(--fifth-color) 70%);
 }
 
 .80:hover {
-background-image: linear-gradient(90deg, var(--fourth-color) 80%, var(--fifth-color) 80%);
+	background-image: linear-gradient(90deg, var(--fourth-color) 80%, var(--fifth-color) 80%);
 }
 
 
@@ -859,10 +859,10 @@ div.circular-sb > div > img {
 	height: auto;
 }
 
- .submit-btn{
-    padding: 0.5rem;
-    margin: 1rem;
- }
+.submit-btn{
+	padding: 0.5rem;
+	margin: 1rem;
+}
 
 /*      *************************************************         */
 
@@ -989,6 +989,15 @@ div.circular-sb > div > img {
 		align-items: center;
 	}
 	
+	/* *****************************************************************
+	*************************    PAGE : PHOTO *************************
+	***************************************************************** */
+	
+	article.photo > figure :hover {
+		transform: scale(2);
+		-webkit-transform: scale(2); /* Safari */
+	}
+	
 	
 	/* *****************************************************************
 	*************************    PAGE : LINKS *************************
@@ -996,7 +1005,7 @@ div.circular-sb > div > img {
 	
 	
 	.category{
-		width:15rem;
+		width:20rem;
 		margin-left:0;
 	}
 	
@@ -1017,10 +1026,13 @@ div.circular-sb > div > img {
 		align-items: center;
 	}
 	
-	
+	/* smiley size */
 	.row-star svg {
-		width:5%;
+		width:15%;
 		height: auto;
 	}
 	
+	.row-star > div > span {
+		font-size: 5rem;
+	}
 }
