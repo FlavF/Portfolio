@@ -1021,7 +1021,10 @@ div.circular-sb > div > img {
 	*************************    PAGE : PROJECT *************************
 	***************************************************************** */
 	.filter-container{
-		flex-wrap: nowrap;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		align-items: center;
+		align-content: space-around;
 	}
 	
 	/* *****************************************************************
