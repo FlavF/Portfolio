@@ -29,7 +29,7 @@ class MessageController{
             $passW = "Bisounours4785";
             
             try{
-                 //smtp settings
+                //smtp settings
                 $mail->isSMTP();
                 $mail->Host = "smtp.gmail.com";
                 $mail->SMTPAuth = true;
@@ -48,15 +48,21 @@ class MessageController{
                 $mail->Body = $message;
                 
                 $mail->send();
+
+                if(empty($clientEmail)){
+                    $response = "Votre email n'a pas été renseigné. Votre message ne peut donc pas être envoyé.";
+                }
+                else{
+                    $response = "Votre email a bien été envoyé. Je vous remercie " . $name . ".";
+                }
                 
-                $response = "Email bien envoyé. Merci " . $name . ".";
                 
             }catch(Exception $e)
             {
                 $response = "Email non envoyé.". $e->getMessage();
             }
             // to reload the page with ok or not
-            header("location: index.php?response=$response");
+            header("location: index.php?page=message&response=$response");
         }
     }
     

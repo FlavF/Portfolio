@@ -66,8 +66,8 @@ body {
 	font-family: serif;
 	background-color: var(--main-background-color);
 	/* text-align: justify; */
-	/*height: 100vh;
-	width: 100vw;*/
+	max-height: 100vh;
+	/* width: 100vw;*/
 }
 
 /*image*/
@@ -129,9 +129,9 @@ p{
 /* *****************************************************************
 -------------------------      HEADER      -------------------------
 ***************************************************************** */
-/* header{
-	height: 10vh;
-} */
+header{
+	height: 12vh;
+}
 
 .header{
 	margin-top: auto;
@@ -146,7 +146,7 @@ p{
 	margin-top: auto;
 	display: inline-block;          
 	padding-right: 1rem;                
-	padding-left: 100%;                   
+	/* padding-left: 100%;                    */
 	white-space: nowrap;                 
 	animation: defilement-rtl 60s infinite linear;
 }
@@ -170,10 +170,16 @@ p{
 
 main{
 	padding: 1rem 1rem 1rem 8rem;
-	scroll-behavior:smooth;
-	/* height: 80vh; */
+	height: 75vh;
+	display: block;
+	overflow-y: scroll;
+	scroll-behavior: smooth;
 }
 
+.home{
+	text-align: center;
+	color:var(--fourth-color);
+}
 
 /* ::::::::::: NAV :::::::::: */
 /* Style the links inside the sidenav */
@@ -265,12 +271,13 @@ main{
 
 footer {
 	/* position: fixed; */
-	position:relative;
+	/* position:relative;
 	left: 0;
 	bottom: 0;
-	width: 100%;
-	overflow-y: hidden;
+	width: 100%;*/
+	overflow-y: hidden; 
 	text-align: center;
+	height: 13vh;
 }
 
 /*  ************** Icons  **************  */
@@ -284,7 +291,7 @@ footer .fas {
 	display: none;
 }
 
-.modal{
+/* .modal{
 	display: block;
 	position: fixed;
 	z-index: 80; 
@@ -295,10 +302,10 @@ footer .fas {
 	overflow: auto; /* Enable scroll if needed */
 	background-color: rgb(0,0,0); 
 	background-color: rgba(16, 54, 32, 0.4); 
-}
+} */
 
 /* Modal Content */
-.modal-content{
+/* .modal-content{
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-around;
@@ -310,12 +317,12 @@ footer .fas {
 	border: 0.1rem solid #888;
 	border-radius: 25%;
 	width: 70%; 
-}
+} */
 
-.modal-content input,
+/* .modal-content input,
 .modal-content textarea{
 	border:none;
-}
+} */
 
 /* The Close Button */
 .close {
@@ -371,7 +378,8 @@ footer .fas {
 .download-cv{
 	text-decoration:none;
 	color:var(--third-color);
-	margin-left: 70vw;
+	display: block;
+	text-align: end;
 }
 
 
@@ -558,7 +566,7 @@ footer .fas {
 	transition: 2s all;	
 } 
 
-.40:hover {
+/* .40:hover {
 	background-image: linear-gradient(90deg, var(--fourth-color) 40%, var(--fifth-color) 40%);
 }
 
@@ -580,7 +588,7 @@ footer .fas {
 
 .80:hover {
 	background-image: linear-gradient(90deg, var(--fourth-color) 80%, var(--fifth-color) 80%);
-}
+} */
 
 
 /* small bubble */

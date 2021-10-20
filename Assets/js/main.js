@@ -34,23 +34,23 @@ function goingBackTop() {
 }
 
 // **** Page : Modal ****
-function showModal() {
-	console.log("hello modal");
-	try {
-		modal.classList.remove("hidden");
-		// console.log(modal);
-	} catch (error) {
-		console.log("il y a une erreur");
-	}
-}
+// function showModal() {
+// 	console.log("hello modal");
+// 	try {
+// 		modal.classList.remove("hidden");
+// 		// console.log(modal);
+// 	} catch (error) {
+// 		console.log("il y a une erreur");
+// 	}
+// }
 
-function hideModal() {
-	modal.classList.add("hidden");
-}
+// function hideModal() {
+// 	modal.classList.add("hidden");
+// }
 
-const closeModal = (event) => {
-	modal.classList.add("hidden");
-};
+// const closeModal = (event) => {
+// 	modal.classList.add("hidden");
+// };
 
 // **** Filter : page Projects and Photos ****
 filterSelection("all");
@@ -105,13 +105,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	// **** Page : Modal ****
 	// open modal
-	message.addEventListener("click", showModal);
+	// message.addEventListener("click", showModal);
 
-	//close modal
-	if (hidden) {
-		close.addEventListener("click", hideModal);
-		window.addEventListener("click", closeModal);
-	}
+	// //close modal
+	// if (hidden) {
+	// 	close.addEventListener("click", hideModal);
+	// 	window.addEventListener("click", closeModal);
+	// }
 
 	// **** Filter : page Projects and Photos ****
 	// Add active class to the current control button (highlight it)

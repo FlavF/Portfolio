@@ -1,0 +1,25 @@
+<h1>Message</h1>
+<form action="index.php?page=formMessage" method="post">
+    <p>
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email">
+    </p>
+    <p>
+        <label for="name">Prénom</label>
+        <input type="text" name="name" id="name">
+    </p>
+
+    <p>
+        Message:
+    </p>
+    <p>
+        <textarea rows="5" name="message" cols="30"></textarea>
+    </p>
+    <p>
+        <input type="submit" name="submit" value="Envoyer">
+    </p>
+</form>
+<div> <?php if(isset($_GET['response'])): ?>
+    <?= $_GET['response'] ?>
+    <?php endif; ?>
+</div>

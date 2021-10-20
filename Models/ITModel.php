@@ -7,7 +7,7 @@ class ITModel extends ModelManager
     {
         $req = "SELECT start_date, end_date, name, location,description, type  
         FROM CV_IT
-        ORDER BY end_date DESC";
+        ORDER BY id_about DESC";
 
         return $this -> queryFetchAll($req);
     }
