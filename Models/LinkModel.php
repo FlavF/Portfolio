@@ -7,7 +7,8 @@ class LinkModel extends ModelManager
     public function getLinks()
     {
         $req = "SELECT DISTINCT link, url, title, id_link_tag as id_tag, level
-        FROM  Links";
+        FROM  Links
+        ORDER By id_tag";
     
 
         return $this -> queryFetchAll($req);
@@ -17,7 +18,8 @@ class LinkModel extends ModelManager
     public function getTags()
     {
         $req = "SELECT id_link_tag as id_tag, link_tag as tag
-        FROM  Links_tags";
+        FROM  Links_tags
+        ORDER BY tag";
 
         return $this -> queryFetchAll($req);
     }

@@ -52,15 +52,13 @@
                 <caption><?=htmlspecialchars($tag['tag']) ?></caption>
                 <tbody>
                     <?php foreach($links as $link): ?>
-                    <tr>
-                        <?php if(isset($link['link'])) :?>
+                        <?php if(isset($link['link']) && !empty($link['link'])) :?>
                         <?php if($link['level'] == 1) :?>
                         <?php if($tag['id_tag'] === $link['id_tag']) :?>
+                    <tr>
                         <td>
                             <!-- Link -->
-                            <a href="<?=htmlspecialchars($link['url']) ?>"
-                                title="<?=htmlspecialchars($link['title']) ?>"
-                                target="_blank"><?=htmlspecialchars($link['link']) ?></a>
+                            <a href="<?=htmlspecialchars($link['url']) ?>" title="<?=htmlspecialchars($link['title']) ?>" target="_blank"><?=htmlspecialchars($link['link']) ?></a>
                         </td>
                         <?php endif; ?>
                         <?php endif; ?>
