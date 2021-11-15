@@ -5,7 +5,7 @@ class ProjectModel extends ModelManager
 
      public function getProjects()
     {
-        $req = "SELECT DISTINCT Projects.name as project, description, Projects.src as src, Projects.alt as alt, data_base, data_base_alt
+        $req = "SELECT DISTINCT Projects.name as project, description, Projects.src as src, Projects.link as link, Projects.alt as alt, data_base, data_base_alt
         FROM Projects";
 
         return $this -> queryFetchAll($req);
