@@ -6,7 +6,8 @@ class PhotographiesModel extends ModelManager
      public function getPhotos()
     {
         $req = "SELECT id_photo, name, src, alt 
-        FROM Photographies";
+                FROM Photographies
+                ORDER BY visual ASC";
 
         return $this -> queryFetchAll($req);
     }

@@ -10,7 +10,6 @@ class LinkModel extends ModelManager
         FROM  Links
         ORDER By id_tag";
     
-
         return $this -> queryFetchAll($req);
     }
 

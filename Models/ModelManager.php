@@ -10,10 +10,10 @@ class ModelManager
     {
         //connect to the database		  
         try {
-             $this-> bdd = new PDO('mysql:host=127.0.0.1;dbname=Portfolio;charset=utf8','root');
+             //$this-> bdd = new PDO('mysql:host=127.0.0.1;dbname=Portfolio;charset=utf8','root');
             
-             //todo: Mettre la base de données sur l'IDE
-            //$this-> bdd = new PDO('mysql:host=db.3wa.io;dbname=flaviafon_Portfolio;charset=utf8','flaviafon','04b91770b2423ebdff05b9438daca50e');
+             //bdd 3WA
+            $this-> bdd = new PDO('mysql:host=db.3wa.io;dbname=flaviafon_Portfolio;charset=utf8','flaviafon','04b91770b2423ebdff05b9438daca50e');
         }
 
         catch (Exception $ex) 
