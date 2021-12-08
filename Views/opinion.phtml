@@ -181,7 +181,7 @@
                     </div>
                 </div>
                 <input class="submit-btn" type="submit" value="J'ai fait mon choix">
-                <span><?=$message ?></span>
+                <span class="message"><?=$message ?></span>
             </div>
         </div>
     </form>
@@ -194,10 +194,10 @@
     <?php foreach($starAverage as $avg):?>
     <p>Moyenne de <?=htmlspecialchars($avg['avg'])?>
         <?php endforeach ;?>
-        sur
+        sur 5. Il y a eu 
         <?php foreach($starSum as $sum):?><?=htmlspecialchars($sum['sum'])?>
         <?php endforeach ;?>
-        notes.</p>
+        votes.</p>
 
     <div class="row-star">
         <!-- 5 stars -->

@@ -4,15 +4,11 @@
 // **** All pages : arrow up when too far down  ****
 let buttonTop = document.getElementById("button-top");
 
-// **** Page : Modal ****
-let message = document.getElementById("message"); //open the modal
-let modal = document.getElementById("modal"); //modal
-let hidden = document.getElementsByClassName("hidden"); //modal
-let close = document.getElementsByClassName("close")[0]; //to close modal
+let buttonDarkMode = document.querySelector(".button-toggle");
+let prefersDarkMode = window.matchMedia("((prefers-color-scheme:dark)");
 
 // **** Filter : page Projects and Photos ****
 let btnContainer = document.getElementById("myBtnContainer");
-
 
 /******FUNCTIONS***********
  ***************************/
@@ -22,6 +18,7 @@ let btnContainer = document.getElementById("myBtnContainer");
 function scrolling() {
 	if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
 		buttonTop.classList.remove("hidden");
+	console.log("show");
 	} else {
 		buttonTop.classList.add("hidden");
 	}
@@ -33,24 +30,15 @@ function goingBackTop() {
 	document.documentElement.scrollTop = 0;
 }
 
-// **** Page : Modal ****
-// function showModal() {
-// 	console.log("hello modal");
-// 	try {
-// 		modal.classList.remove("hidden");
-// 		// console.log(modal);
-// 	} catch (error) {
-// 		console.log("il y a une erreur");
-// 	}
-// }
+//ToggleMode between dark and light mode
+function darkMode() {
+		if (prefersDarkMode.matches) {
+			document.body.classList.toggle("light-theme");
+		} else {
+			document.body.classList.toggle("dark-theme");
+		}
+	};
 
-// function hideModal() {
-// 	modal.classList.add("hidden");
-// }
-
-// const closeModal = (event) => {
-// 	modal.classList.add("hidden");
-// };
 
 // **** Filter : page Projects and Photos ****
 filterSelection("all");
@@ -94,6 +82,7 @@ function removeClass(element, name) {
 /*********CODE***********
  ***************************/
 document.addEventListener("DOMContentLoaded", function () {
+	
 	// **** All pages : arrow up when too far down  ****
 	//to show button when scroll down
 	window.onscroll = function () {
@@ -103,16 +92,10 @@ document.addEventListener("DOMContentLoaded", function () {
 	// going back top of the page
 	buttonTop.addEventListener("click", goingBackTop);
 
-	// **** Page : Modal ****
-	// open modal
-	// message.addEventListener("click", showModal);
+	// to change Dark Mode / Light Mode
+	buttonDarkMode.addEventListener("click", darkMode);
 
-	// //close modal
-	// if (hidden) {
-	// 	close.addEventListener("click", hideModal);
-	// 	window.addEventListener("click", closeModal);
-	// }
-
+	
 	// **** Filter : page Projects and Photos ****
 	// Add active class to the current control button (highlight it)
 	if (btnContainer) {
