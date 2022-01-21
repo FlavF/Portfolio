@@ -12,6 +12,7 @@
 html {
 	font-size: 62.5%;
 	/* 1rem = 10px (10/16*100) default size is 16px */
+	scroll-behavior: smooth;
 }
 
 
@@ -29,7 +30,7 @@ html {
 	--sixth-color:#11d4cb;
 	
 	/*Size Mobile */
-	--main-size: 1rem;
+	--main-size: 1.8rem;
 	--line-size: 1rem;
 	--line: 2rem;
 	--line-title: 2rem;
@@ -37,11 +38,11 @@ html {
 	--footer-size : 1rem;
 	
 	/*Size desktop*/
-	--main-size-desktop: 1.8rem;
-	--line-size-desktop: 3rem;
+	--main-size-desktop: 2rem;
+	--line-size-desktop: 3.2rem;
 	--line-footer-desktop : 1.5rem;
-	--line-title-desktop: 2.8rem;
-	--line-desktop: 3rem;
+	--line-title-desktop: 3rem;
+	--line-desktop: 3.2rem;
 	--title-two-Size-desktop: 2.7rem;
 	--footer-size-desktop : 1.5rem;
 }
@@ -77,8 +78,8 @@ body {
 	
 	/* Background Color */
 	--main-background-color:var(--fifth-color);
---hover-background-color : var(--third-color);
-
+	--hover-background-color : var(--third-color);
+	
 	--timeline-background : var(--second-color);
 	--timeline-border : var(--second-color);
 	
@@ -120,7 +121,7 @@ body.dark-theme {
 	/* Background Color */
 	--main-background-color:var(--main-color);
 	--hover-background-color : var(--second-color);
-
+	
 	--timeline-background : var(--main-color);
 	--container-border: var(--third-color);
 	
@@ -162,7 +163,7 @@ body.dark-theme {
 		/* Background Color */
 		--main-background-color:var(--main-color);
 		--hover-background-color : var(--second-color);
-
+		
 		--timeline-background : var(--main-color);
 		--container-border: var(--third-color);
 		
@@ -200,7 +201,7 @@ body.dark-theme {
 		/* Background Color */
 		--main-background-color:var(--fifth-color);
 		--hover-background-color : var(--third-color);
-
+		
 		--timeline-background : var(--second-color);
 		--timeline-border : var(--second-color);
 		
@@ -212,12 +213,8 @@ body.dark-theme {
 		
 		--button-dark-color:var(--sixth-color);
 		--button-dark-background : var(--main-color);
-	}
-	
+	}	
 } 	
-
-
-
 
 
 /* *****************************************************************
@@ -234,7 +231,7 @@ body {
 	color:var(--text-color);
 }
 
-a{
+a {
 	color: var(--link-color);
 }
 
@@ -269,7 +266,6 @@ img {
 .button-top:focus {
 	color: var(--button-top-background);
 	background-color: var(--button-top-color);
-	
 }
 
 .button-toggle{
@@ -306,10 +302,7 @@ main aside section h3{
 	text-align: left;
 }
 
-p{
-	margin : 1.5rem 0;
-	line-height: 2rem;
-}
+
 
 /* *****************************************************************
 -------------------------      HEADER      -------------------------
@@ -319,36 +312,77 @@ p{
 	height: 12vh;
 	margin-top: auto;
 	display: flex;
-	flex-direction: row;
+	flex-direction: column-reverse;
 	flex-wrap: wrap;
-	align-items: flex-start;
+	align-items:flex-start ;
 	color:var(--text-color);
 	z-index:0;
 }
 
-
-.browser{
-	color:var(--third-color);
-	margin-top: auto;
-	display: inline-block;          
-	padding-right: 1rem;                
-	/* padding-left: 100%;                    */
-	white-space: nowrap;                 
-	animation: defilement-rtl 60s infinite linear;
+.header a {
+	width: 15rem;
+	height: auto;
 }
 
-@keyframes defilement-rtl {
-	0% {
-		transform: translate3d(0,0,0);      /* position initiale à droite */
-	}
-	100% {
-		transform: translate3d(-100%,0,0);  /* position finale à gauche */
-	}
+.header p {
+	top :1rem;
 }
 
 .bold{
 	font-weight: 500;
 }
+
+/* Button darkmode */
+/* Label */
+.dark{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: relative;
+	padding:0.5rem;
+	background-color: var(--second-color);
+	width: 6rem;
+	height: 3rem ;
+	border-radius: 6rem;
+	transform: scale(1.5);
+}
+
+/* Checkbox */
+.darkmodes{
+	opacity:0;
+	position:absolute;
+}
+
+/* Ball where the moon and sun are */
+.ball{
+	position:absolute;
+	height:2.4rem;
+	width:2.4rem;
+	top:0.3rem;
+	left:0.3rem;
+	border-radius: 50%;
+	background-color: var(--main-color);
+	transition: transofrm 0.2 linear;
+}
+
+/* if checkbox check, the label change color*/
+.darkmodes:checked +.dark{
+	background-color: var(--third-color);
+}
+
+/* if checkbox check,the ball change place*/
+.darkmodes:checked +.dark .ball{
+	transform: translateX(3rem);
+}
+
+.fa-moon{
+	color:#f8e07e;
+}
+
+.fa-sun{
+	color:#f39c12;
+}
+
 
 /* *****************************************************************
 -------------------------        MAIN      -------------------------
@@ -359,7 +393,6 @@ main{
 	height: 75vh;
 	display: block;
 	overflow-y: scroll;
-	scroll-behavior: smooth;
 	color:var(-text-color);
 	z-index:90;
 }
@@ -375,13 +408,13 @@ main{
 	position: absolute; 
 	left: -15rem; 
 	transition: 0.3s; 
-	padding: 2rem; 
-	width: 20rem; 
+	padding: 1rem; 
+	width: 19rem; 
 	text-decoration: none; 
 	font-size: 2rem; 
 	color: var(--fourth-color); 
 	border-radius: 5rem; 
-	line-height: 1.2rem;
+	line-height: 1rem;
 	z-index:100;
 }
 
@@ -449,6 +482,7 @@ main{
 .left-arrow{
 	height: 10rem ;
 	width: auto;
+	margin-top: 1rem;
 }
 
 /*  ************** Flex **************  */
@@ -717,8 +751,8 @@ footer .far {
 
 /* big bubble */
 .circular-sb {
-	width: 9.5rem;
-	height: 9.5rem;
+	width: 15rem;
+	height: 15rem;
 	position: relative;
 	border: 0.5rem solid var(--container-border);
 	border-radius: 50%;
@@ -760,14 +794,15 @@ footer .far {
 
 /* small bubble */
 .circle {
-	width: 7rem;
-	height: 7rem;
+	width: 10rem;
+	height: 10rem;
+	top: 1.4rem;
+	left: 1.4rem;
 	position: absolute;
 	box-sizing: content-box;
 	border: 0.5rem solid var(--container-border);
 	border-radius: 50%;
-	bottom: -0.5rem;
-	left: 0.3rem;
+	
 } 
 
 .circle:hover {
@@ -782,7 +817,7 @@ footer .far {
 } 
 
 div.circular-sb > div > img {
-	padding-top: 1rem;
+	padding-top: 0.2rem;
 }
 
 
@@ -813,9 +848,10 @@ div.circular-sb > div > img {
 .btn {
 	border: none;
 	outline: none;
-	padding: 1.2rem 1.6rem;
+	padding: 0.5rem 0.8rem;
 	background-color: var(--second-color);
 	cursor: pointer;
+	margin-bottom: 0.1rem;
 }
 
 /* Add a light grey background on mouse-over */
@@ -849,6 +885,10 @@ div.circular-sb > div > img {
 .project-languages{
 	text-align: center;
 	color:var(--fourth-color);
+}
+
+.project p{
+	line-height: 4rem;
 }
 
 /* *****************************************************************
@@ -1049,11 +1089,29 @@ div.circular-sb > div > img {
 /*      *************************************************         */
 
 /* *****************************************************************
+.......................  Tablette ....................... 
+***************************************************************** */
+@media screen and (min-width: 800px) {
+	
+	.header{
+		flex-direction: row;
+		align-items: baseline;
+		justify-content: space-around;
+	}
+	
+	.header a{
+		width: 20rem;
+		height: auto;
+	}
+}
+
+/*      *************************************************         */
+
+/* *****************************************************************
 .......................  PC/DESKTOP VERSION  ....................... 
 ***************************************************************** */
 
-
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1100px) {
 	
 	body {
 		font-size : var(--main-size-desktop);
@@ -1063,12 +1121,64 @@ div.circular-sb > div > img {
 		line-height: var(--line-title-desktop);
 	}
 	
+	/* Aside space between button menu */
+	aside p{
+		margin : 1rem 0;
+		line-height: 1rem;
+	}
 	
 	/* Modal Content */
 	.modal-content{
 		margin: 5% auto;
 		padding: 1rem;
 		width: 25%; 
+	}
+	
+	/* Header */
+	.header{
+		align-items: center;
+	}
+	
+	.header a{
+		width: 25rem;
+		height: auto;
+	}
+	
+	.button-toggle{
+		text-align: end;
+	}
+	
+	main p{
+		line-height: var(--line-desktop);
+	}
+	
+	/* *****************************************************************
+	*************************    PAGE : Home *************************
+	***************************************************************** */
+	
+	.home p{
+		border-right: .15em solid var(--third-color);
+		width: 0;
+		overflow: hidden;
+		white-space: nowrap;
+		animation: blink 1s steps(1) infinite;
+		animation: typing 4s steps(38) 1s 1 normal both, blink 1s steps(1) infinite;
+	}
+	
+	@keyframes blink{
+		50%{
+			border-color: transparent;
+		}
+		
+	}
+	
+	@keyframes typing {
+		from {
+			width: 0;
+		}
+		to {
+			width: 100%;
+		}
 	}
 	
 	/* *****************************************************************
@@ -1145,10 +1255,7 @@ div.circular-sb > div > img {
 	
 	/* small bubble */
 	.circle {
-		width: 10rem;
-		height: 10rem;
-		bottom: 1rem;
-		left: 1rem;
+		scale: (2);
 	}
 	
 	.circle .small-language{
@@ -1199,7 +1306,9 @@ div.circular-sb > div > img {
 		margin-left:0;
 	}
 	
-	
+	.btn {
+		padding: 1.2rem 1.6rem;
+	}
 	/* *****************************************************************
 	*************************    PAGE : PROJECT *************************
 	***************************************************************** */

@@ -8,12 +8,16 @@
     echo date('l jS \of F Y h:i:s A');
     ?> 
     </p>
-
-    <div class="browser">
-        <span class="bold">Bonjour et Bienvenue.</span> Pour vous connecter à ce portfolio, vous utilisez :
-        <?= $_SERVER['HTTP_USER_AGENT'] . "\n\n";?>
+   
+    <div>
+        <input type="checkbox" name="darkmode" id="darkmode" class="darkmodes">
+        <label for="darkmode" class="dark">
+             
+             <i class="fa-regular fa-sun"></i>
+             <i class="fa-regular fa-moon"></i>
+            <div class="ball"></div>
+        </label>
     </div>
 
-    <button class="button-toggle">Dark mode</button>
-
+  
 </div>

@@ -2,7 +2,7 @@
 
 <!-- Filter button-->
 <div id="myBtnContainer" class="btn-container">
-    <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+    <button class="btn active" onclick="filterSelection('all')"> Tous</button>
     <?php foreach ($tags as $tag): ?>
     <button class="btn"
         onclick="filterSelection('<?=htmlspecialchars($tag['name']) ?>')"><?=htmlspecialchars($tag['name']) ?></button>

@@ -1,43 +1,28 @@
 /* *****VARIABLES***********
- **************************** */
+**************************** */
+// **** All pages : ToggleMode between dark and light mode **** 
+let dark = document.getElementById("darkmode");
+let prefersDarkMode = window.matchMedia("(prefers-color-scheme:dark)");
 
 // **** All pages : arrow up when too far down  ****
-let buttonTop = document.getElementById("button-top");
-
-let buttonDarkMode = document.querySelector(".button-toggle");
-let prefersDarkMode = window.matchMedia("((prefers-color-scheme:dark)");
 
 // **** Filter : page Projects and Photos ****
 let btnContainer = document.getElementById("myBtnContainer");
 
 /******FUNCTIONS***********
- ***************************/
+***************************/
+// **** All pages : ToggleMode between dark and light mode **** 
+dark.addEventListener("change", () => {
+	if (prefersDarkMode.matches) {
+		document.body.classList.toggle("light-theme");
+	} else {
+		document.body.classList.toggle("dark-theme");
+	}
+})
+
 
 // **** All pages : arrow up when too far down ****
-// show button scroll when the scrolling down go over 20px
-function scrolling() {
-	if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-		buttonTop.classList.remove("hidden");
-	console.log("show");
-	} else {
-		buttonTop.classList.add("hidden");
-	}
-}
 
-// when click on the button ^ going back to top of the page
-function goingBackTop() {
-	document.body.scrollTop = 0;
-	document.documentElement.scrollTop = 0;
-}
-
-//ToggleMode between dark and light mode
-function darkMode() {
-		if (prefersDarkMode.matches) {
-			document.body.classList.toggle("light-theme");
-		} else {
-			document.body.classList.toggle("dark-theme");
-		}
-	};
 
 
 // **** Filter : page Projects and Photos ****
@@ -80,21 +65,12 @@ function removeClass(element, name) {
 }
 
 /*********CODE***********
- ***************************/
+***************************/
 document.addEventListener("DOMContentLoaded", function () {
 	
+	
 	// **** All pages : arrow up when too far down  ****
-	//to show button when scroll down
-	window.onscroll = function () {
-		scrolling();
-	};
-
-	// going back top of the page
-	buttonTop.addEventListener("click", goingBackTop);
-
-	// to change Dark Mode / Light Mode
-	buttonDarkMode.addEventListener("click", darkMode);
-
+	
 	
 	// **** Filter : page Projects and Photos ****
 	// Add active class to the current control button (highlight it)
@@ -108,6 +84,4 @@ document.addEventListener("DOMContentLoaded", function () {
 			});
 		}
 	}
-
-
 });

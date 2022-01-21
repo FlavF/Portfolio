@@ -4,7 +4,7 @@ class OpinionController extends FrontController
 {
     public function display()
     {
-        $message = "Vous pouvez voter.";
+        // $message = "Vous pouvez voter.";
         
         // nbr star 1
         $model = new RatingModel();
@@ -38,7 +38,7 @@ class OpinionController extends FrontController
         $ipAdress = $this->getIp();
         $model = new RatingModel();
         $starIp = $model -> getStarAllIp($ipAdress);
-                //no ip in the database go vote 
+        //no ip in the database go vote 
         if(empty($starIp)){
             $message = "Vous pouvez voter.";
         }
@@ -66,13 +66,27 @@ class OpinionController extends FrontController
     }
     
     
-    function addStars(){
-        if($message === "Vous avez déjà voté. Merci pour votre vote."){
-            die;
+    // Look if IP is already in the base
+    function getCheck(){
+        $adressIp = $this->getIp();
+        $model = new RatingModel();
+        $starsIp = $model -> getStarAllIp($adressIp);
+        //no ip in the database
+        if(empty($starsIp)){
+            $check = false;
         }
-        else{
-            
-            $ip = $this->getIp();
+        //ip in the database
+        else {
+            $check = true;
+        }
+        return $check;
+    }
+    
+    function addStars(){
+        $ip = $this->getIp();
+        $checkIp = $this->getCheck();
+        
+        if($checkIp === false){
             
             //from the result we add the starnumber and the rating
             switch($_POST['rating']){
@@ -132,10 +146,10 @@ class OpinionController extends FrontController
                                                         (string) $ip);
                                                         break;
                                                     }
-                                                    
-                                                    //reload page
-                                                    header('location:index.php?page=opinion');
                                                 }
-                                            }                        
-                                       
+                                                
+                                                //reload page
+                                                header("location: index.php?page=opinion");
+                                                //$this->display();
+                                            }
                                         }
