@@ -18,9 +18,6 @@
 </head>
 
 <body>
-    <!-- Button to go back up -->
-    <img src="Assets/img/icon/upbutton.svg" alt="cliquer pour retourner en haut de la page" id="button-top" class="button-top hidden">
-
     <!-- Header -->
     <header>
         <?php include "Views/header.phtml"; ?>
@@ -30,10 +27,14 @@
         <aside><?php include "Views/aside.phtml"; ?></aside>
         <?php include $template; ?>
     </main>
+
     <!-- Footer -->
     <footer>
         <?php include "Views/footer.phtml"; ?>
+        <!-- Button to go back up -->
+        <img src="Assets/img/icon/upbutton.svg" alt="cliquer pour retourner en haut de la page" id="button-top" class="button-top hidden">
     </footer>
+
 
     <!-- ===========SCRIPTS =========== -->
     <!-- IF NOT JAVASCRIPT -->
@@ -42,7 +43,7 @@
 
     <!-- MAIN SCRIPT-->
     <script src="Assets/js/main.js"></script>
-    
+
 
 </body>
 
