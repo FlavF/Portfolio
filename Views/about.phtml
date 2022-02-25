@@ -2,11 +2,10 @@
     <h1 id="#about">Flavia</h1>
 
     <!-- Button to download the CV -->
-<a href="Assets/img/CV - FONTAINE Flavia - Developpeuse Full Stack 2021.pdf" download rel="noopener noreferrer" target="_blank" class="download-cv">
+<a href="Assets/img/CV - FONTAINE Flavia - Developpeuse Full Stack Junior 2022.pdf" download rel="noopener noreferrer" target="_blank" class="download-cv">
 Pour télécharger le CV sous PDF : 
 <i class="fas fa-file-export"></i>
 </a>
-
 
     <!-- Cloud with words -->
     <article>
@@ -24,6 +23,21 @@ Pour télécharger le CV sous PDF :
         </div>
     </article>
 
+ <!-- languages it -->
+    <article>
+        <h2>Intégration - Développement web</h2>
+        <div class="languages-it">
+            <?php foreach($aboutPictures as $picture): ?>
+            <div class="circular-sb <?=htmlspecialchars($picture['percentage']) ?>">
+                <span><?=htmlspecialchars($picture['percentage']) ?>%</span>
+                <div class="circle">
+                    <img class="small-language" src="<?=htmlspecialchars( $picture['src']) ?>"
+                        alt="<?=htmlspecialchars($picture['alt']) ?>">
+                </div>
+            </div>
+            <?php endforeach;?>
+        </div>
+    </article>
 
     <!-- experiences -->
     <!-- experience IT -->
@@ -65,23 +79,7 @@ Pour télécharger le CV sous PDF :
             <?php endforeach;?>
         </div>
     </article>
-
-    <!-- languages it -->
-    <article>
-        <h2>Intégration - Développement web</h2>
-        <div class="languages-it">
-            <?php foreach($aboutPictures as $picture): ?>
-            <div class="circular-sb <?=htmlspecialchars($picture['percentage']) ?>">
-                <span><?=htmlspecialchars($picture['percentage']) ?>%</span>
-                <div class="circle">
-                    <img class="small-language" src="<?=htmlspecialchars( $picture['src']) ?>"
-                        alt="<?=htmlspecialchars($picture['alt']) ?>">
-                </div>
-            </div>
-            <?php endforeach;?>
-        </div>
-    </article>
-
+  
     <!-- Languages english, spanish, japanese-->
     <article>
         <h2>Langues</h2>
