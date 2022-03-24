@@ -489,8 +489,8 @@ main{
 }
 
 .small-language{
-	width: auto;
-	height: 5rem;
+	width: 5rem;
+	height: auto;
 }
 /* Business access */
 .left-arrow{
@@ -758,7 +758,7 @@ footer .far {
 /********* Bubble languages *********/
 
 .languages-it{
-	padding-left: 35vw;
+	
 	color:var(--fourth-color);
 }
 
@@ -778,9 +778,9 @@ footer .far {
 }
 
 
-.circular-sb>img{
-	height: 3rem;
-	width: auto;
+.circular-sb > img{
+	height: auto;
+	width: 3rem;
 }
 
 /* Todo: mettre les % correctements */
@@ -1245,7 +1245,6 @@ footer .far {
 	/**** Bubbles Languages ****/
 	/* Pictures int/dev */
 	.languages-it{
-		padding-left: 0vw;
 		display: flex;
 		justify-content: space-around;
 		align-content: center;
@@ -1255,6 +1254,7 @@ footer .far {
 	.circular-sb {
 		width: 15rem;
 		height: 15rem;
+		margin-right: 1rem;
 	}
 	
 	/**** Languages ****/
