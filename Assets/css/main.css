@@ -413,7 +413,7 @@ main{
 }
 
 .menus a{
-text-decoration: none;
+	text-decoration: none;
 }
 
 /* ::::::::::: NAV :::::::::: */
@@ -512,7 +512,7 @@ text-decoration: none;
 footer {
 	position: fixed;
 	display: block;
-	padding : 1rem 0 1rem 1rem;
+	padding : 1rem 0 3rem 1rem;
 	text-align: center;
 	color:var(--text-color);
 	background-color: var(--main-background-color);
@@ -772,11 +772,21 @@ footer .far {
 	text-align: center;
 	color:var(---container-border);
 	margin-bottom: 1rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+
+.circular-sb>img{
+	height: 3rem;
+	width: auto;
 }
 
 /* Todo: mettre les % correctements */
 .circular-sb:hover{
 	color:var(--text-hover-color);
+	background-color: var(--hover-background-color);
 	transition: 2s all;	
 } 
 
@@ -805,33 +815,8 @@ footer .far {
 } */
 
 
-/* small bubble */
-.circle {
-	width: 10rem;
-	height: 10rem;
-	top: 1.4rem;
-	left: 1.4rem;
-	position: absolute;
-	box-sizing: content-box;
-	border: 0.5rem solid var(--container-border);
-	border-radius: 50%;
-	
-} 
 
-.circle:hover {
-	background-color: var(--hover-background-color);
-	transition: 1s all;
-	color : var(--second-color);
-}
 
-.circle .small-language{
-	width:4rem;
-	height: auto;
-} 
-
-div.circular-sb > div > img {
-	padding-top: 0.2rem;
-}
 
 
 /* *****************************************************************
@@ -1180,6 +1165,10 @@ div.circular-sb > div > img {
 		animation: typing 4s steps(38) 1s 1 normal both, blink 1s steps(1) infinite;
 	}
 	
+	.menus p {
+		padding-bottom: 1rem;
+	}
+	
 	@keyframes blink{
 		50%{
 			border-color: transparent;
@@ -1266,19 +1255,6 @@ div.circular-sb > div > img {
 	.circular-sb {
 		width: 15rem;
 		height: 15rem;
-	}
-	
-	/* small bubble */
-	.circle {
-		scale: (2);
-	}
-	
-	.circle .small-language{
-		width:5rem;
-	}
-	
-	div.circular-sb > div > img {
-		padding-top: 2.8rem;
 	}
 	
 	/**** Languages ****/

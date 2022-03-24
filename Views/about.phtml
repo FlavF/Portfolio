@@ -2,40 +2,37 @@
     <h1 id="#about">Flavia</h1>
 
     <!-- Button to download the CV -->
-<a href="Assets/img/CV - FONTAINE Flavia - Developpeuse Full Stack Junior 2022.pdf" download rel="noopener noreferrer" target="_blank" class="download-cv">
-Pour télécharger le CV sous PDF : 
-<i class="fas fa-file-export"></i>
-</a>
+    <a href="Assets/img/CV - FONTAINE Flavia - Developpeuse Back End 2022.pdf" download rel="noopener noreferrer" target="_blank" class="download-cv">
+        Pour télécharger le CV sous PDF :
+        <i class="fas fa-file-export"></i>
+    </a>
 
     <!-- Cloud with words -->
     <article>
         <h2>Qui-suis-je ?</h2>
         <div>
             <ul class="tags">
-                <?php foreach($cloud as $tag): ?>
-                <li class="tag">
-                    <a class="tag__link" href="https://pixabay.com/fr/images/search/<?=htmlspecialchars($tag['tag'])?>/" target="_blank">
-                        <?=htmlspecialchars($tag['tag'])?>
-                    </a>
-                </li>
-                <?php endforeach;?>
+                <?php foreach ($cloud as $tag) : ?>
+                    <li class="tag">
+                        <a class="tag__link" href="https://pixabay.com/fr/images/search/<?= htmlspecialchars($tag['tag']) ?>/" target="_blank">
+                            <?= htmlspecialchars($tag['tag']) ?>
+                        </a>
+                    </li>
+                <?php endforeach; ?>
             </ul>
         </div>
     </article>
 
- <!-- languages it -->
+    <!-- languages it -->
     <article>
         <h2>Intégration - Développement web</h2>
         <div class="languages-it">
-            <?php foreach($aboutPictures as $picture): ?>
-            <div class="circular-sb <?=htmlspecialchars($picture['percentage']) ?>">
-                <span><?=htmlspecialchars($picture['percentage']) ?>%</span>
-                <div class="circle">
-                    <img class="small-language" src="<?=htmlspecialchars( $picture['src']) ?>"
-                        alt="<?=htmlspecialchars($picture['alt']) ?>">
-                </div>
-            </div>
-            <?php endforeach;?>
+            <?php foreach ($aboutPictures as $picture) : ?>
+                <div class="circular-sb <?= htmlspecialchars($picture['percentage']) ?>">
+                    <span><?= htmlspecialchars($picture['percentage']) ?>%</span>
+                    <span><img class="small-language" src="<?= htmlspecialchars($picture['src']) ?>" alt="<?= htmlspecialchars($picture['alt']) ?>"></span>
+                </div>      
+            <?php endforeach; ?>
         </div>
     </article>
 
@@ -44,49 +41,49 @@ Pour télécharger le CV sous PDF :
     <article>
         <h2>Formations et jobs IT</h2>
         <div class="timeline">
-            <?php foreach($aboutIt as $it): ?>
+            <?php foreach ($aboutIt as $it) : ?>
 
-            <?php if($it['type'] === "job" ) : ?>
-            <div class="container-about right">
-                <div class="content">
-                    <?php if($it['start_date'] === $it['end_date'] ) : ?>
-                    <h2><?=htmlspecialchars($it['start_date']) ?></h2>
-                    <?php else: ?>
-                    <h2><?=htmlspecialchars($it['start_date']) ?> - <?=htmlspecialchars($it['end_date'] ) ?></h2>
-                    <?php endif; ?>
-                    <h3><?=htmlspecialchars($it['name']) ?></h3>
-                    <h4><?=htmlspecialchars($it['location']) ?></h4>
-                    <p><?=htmlspecialchars($it['description']) ?></p>
-                </div>
-            </div>
-            <?php endif; ?>
+                <?php if ($it['type'] === "job") : ?>
+                    <div class="container-about right">
+                        <div class="content">
+                            <?php if ($it['start_date'] === $it['end_date']) : ?>
+                                <h2><?= htmlspecialchars($it['start_date']) ?></h2>
+                            <?php else : ?>
+                                <h2><?= htmlspecialchars($it['start_date']) ?> - <?= htmlspecialchars($it['end_date']) ?></h2>
+                            <?php endif; ?>
+                            <h3><?= htmlspecialchars($it['name']) ?></h3>
+                            <h4><?= htmlspecialchars($it['location']) ?></h4>
+                            <p><?= htmlspecialchars($it['description']) ?></p>
+                        </div>
+                    </div>
+                <?php endif; ?>
 
-            <?php if($it['type'] === "formation" ) : ?>
-            <div class="container-about left">
-                <div class="content">
-                    <?php if($it['start_date'] === $it['end_date'] ) : ?>
-                    <h2><?=htmlspecialchars($it['start_date']) ?></h2>
-                    <?php else: ?>
-                    <h2><?=htmlspecialchars($it['start_date']) ?> - <?=htmlspecialchars($it['end_date'] ) ?></h2>
-                    <?php endif; ?>
-                    <h3><?=htmlspecialchars($it['name']) ?></h3>
-                    <h4><?=htmlspecialchars($it['location']) ?></h4>
-                    <p><?=htmlspecialchars($it['description']) ?></p>
-                </div>
-            </div>
-            <?php endif; ?>
+                <?php if ($it['type'] === "formation") : ?>
+                    <div class="container-about left">
+                        <div class="content">
+                            <?php if ($it['start_date'] === $it['end_date']) : ?>
+                                <h2><?= htmlspecialchars($it['start_date']) ?></h2>
+                            <?php else : ?>
+                                <h2><?= htmlspecialchars($it['start_date']) ?> - <?= htmlspecialchars($it['end_date']) ?></h2>
+                            <?php endif; ?>
+                            <h3><?= htmlspecialchars($it['name']) ?></h3>
+                            <h4><?= htmlspecialchars($it['location']) ?></h4>
+                            <p><?= htmlspecialchars($it['description']) ?></p>
+                        </div>
+                    </div>
+                <?php endif; ?>
 
-            <?php endforeach;?>
+            <?php endforeach; ?>
         </div>
     </article>
-  
+
     <!-- Languages english, spanish, japanese-->
     <article>
         <h2>Langues</h2>
         <div class="languages">
-            <?php foreach($aboutLanguages as $language): ?>
-            <p><img class="small-language" src="<?=htmlspecialchars($language['src']) ?>" alt="<?=htmlspecialchars($language['alt']) ?>"> <span> : <?=htmlspecialchars($language['level']) ?></span></p>
-            <?php endforeach;?>
+            <?php foreach ($aboutLanguages as $language) : ?>
+                <p><img class="small-language" src="<?= htmlspecialchars($language['src']) ?>" alt="<?= htmlspecialchars($language['alt']) ?>"> <span> : <?= htmlspecialchars($language['level']) ?></span></p>
+            <?php endforeach; ?>
         </div>
     </article>
 
@@ -95,39 +92,39 @@ Pour télécharger le CV sous PDF :
         <h2>Mes anciens jobs et formations</h2>
 
         <div class="timeline">
-            <?php foreach($aboutOld as $old): ?>
+            <?php foreach ($aboutOld as $old) : ?>
 
-            <?php if($old['type'] === "job" ) : ?>
-            <div class="container-about right">
-                <div class="content">
-                    <?php if($old['start_date'] === $old['end_date'] ) : ?>
-                    <h2><?=htmlspecialchars($old['start_date']) ?></h2>
-                    <?php else: ?>
-                    <h2><?=htmlspecialchars($old['start_date']) ?> - <?=htmlspecialchars($old['end_date'] ) ?></h2>
-                    <?php endif; ?>
-                    <h3><?=htmlspecialchars($old['name']) ?></h3>
-                    <h4><?=htmlspecialchars($old['location']) ?></h4>
-                    <p><?=htmlspecialchars($old['description']) ?></p>
-                </div>
-            </div>
-            <?php endif; ?>
+                <?php if ($old['type'] === "job") : ?>
+                    <div class="container-about right">
+                        <div class="content">
+                            <?php if ($old['start_date'] === $old['end_date']) : ?>
+                                <h2><?= htmlspecialchars($old['start_date']) ?></h2>
+                            <?php else : ?>
+                                <h2><?= htmlspecialchars($old['start_date']) ?> - <?= htmlspecialchars($old['end_date']) ?></h2>
+                            <?php endif; ?>
+                            <h3><?= htmlspecialchars($old['name']) ?></h3>
+                            <h4><?= htmlspecialchars($old['location']) ?></h4>
+                            <p><?= htmlspecialchars($old['description']) ?></p>
+                        </div>
+                    </div>
+                <?php endif; ?>
 
-            <?php if($old['type'] === "formation" ) : ?>
-            <div class="container-about left">
-                <div class="content">
-                    <?php if($old['start_date'] === $old['end_date'] ) : ?>
-                    <h2><?=htmlspecialchars($old['start_date']) ?></h2>
-                    <?php else: ?>
-                    <h2><?=htmlspecialchars($old['start_date']) ?> - <?=htmlspecialchars($old['end_date'] ) ?></h2>
-                    <?php endif; ?>
-                    <h3><?=htmlspecialchars($old['name']) ?></h3>
-                    <h4><?=htmlspecialchars($old['location']) ?></h4>
-                    <p><?=htmlspecialchars($old['description']) ?></p>
-                </div>
-            </div>
-            <?php endif; ?>
+                <?php if ($old['type'] === "formation") : ?>
+                    <div class="container-about left">
+                        <div class="content">
+                            <?php if ($old['start_date'] === $old['end_date']) : ?>
+                                <h2><?= htmlspecialchars($old['start_date']) ?></h2>
+                            <?php else : ?>
+                                <h2><?= htmlspecialchars($old['start_date']) ?> - <?= htmlspecialchars($old['end_date']) ?></h2>
+                            <?php endif; ?>
+                            <h3><?= htmlspecialchars($old['name']) ?></h3>
+                            <h4><?= htmlspecialchars($old['location']) ?></h4>
+                            <p><?= htmlspecialchars($old['description']) ?></p>
+                        </div>
+                    </div>
+                <?php endif; ?>
 
-            <?php endforeach;?>
+            <?php endforeach; ?>
         </div>
     </article>
 </section>
