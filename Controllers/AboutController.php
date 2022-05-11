@@ -12,6 +12,10 @@ class AboutController extends FrontController
         $model = new ITModel();
         $aboutIt = $model -> getIt();
 
+        //get information for Certifications
+        $modelCertifs = new CertificationsModel();
+        $certifications = $modelCertifs-> getCertifs();
+
         //get information for Language IT
         $modelLanguageIT = new LanguagesItModel();
         $aboutPictures = $modelLanguageIT -> getLanguagesIt();

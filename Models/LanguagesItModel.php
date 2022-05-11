@@ -7,7 +7,8 @@ class LanguagesItModel extends ModelManager
     public function getLanguagesIt()
     {
         $req = "SELECT src, alt, percentage, color
-        FROM  Languages_it";
+        FROM  Languages_it
+        ORDER BY name";
         
         return $this -> queryFetchAll($req);
     }

@@ -36,6 +36,19 @@
         </div>
     </article>
 
+<!-- Certifications -->
+ <article>
+        <h2>Certifications</h2>
+        <div class="certifications-it">
+            <?php foreach ($certifications as $certification) : ?>
+            <p>
+                <span><?=htmlspecialchars($certification['date'])?></span>
+                <span><a href="<?=htmlspecialchars($certification['src']) ?>" alt="<?= htmlspecialchars($certification['alt']) ?>"><?=htmlspecialchars($certification['name'])?></a></span>            
+            </p>
+            <?php endforeach; ?>
+        </div>
+ </article>
+
     <!-- experiences -->
     <!-- experience IT -->
     <article>

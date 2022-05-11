@@ -407,13 +407,20 @@ main{
 .home{
 	color:var(--fourth-color);
 }
-.welcome{
-	text-align: center;
-	
+.menu{
+	border: 0.5rem solid white;
+	border-radius: 5rem;
+	padding: 2rem;
+	margin: 2% 25% 0 0;
 }
 
 .menus a{
 	text-decoration: none;
+}
+
+
+.menus>p{
+	text-align: center;
 }
 
 /* ::::::::::: NAV :::::::::: */
@@ -489,14 +496,8 @@ main{
 }
 
 .small-language{
-	width: 5rem;
+	width: 10rem;
 	height: auto;
-}
-/* Business access */
-.left-arrow{
-	height: 10rem ;
-	width: auto;
-	margin-top: 1rem;
 }
 
 /*  ************** Flex **************  */
@@ -663,7 +664,11 @@ footer .far {
 .tag:nth-of-type(4n+4) .tag__link:hover {
 	box-shadow: inset 0 -3rem 0 0 var(--tag-4-color);
 }
-/* ******************************************** */
+/* ****************** Certifications ************************** */
+.certifications-it{
+	text-align: center;
+}
+
 
 /* ******************************************** */
 /********* Timeline *********/
@@ -764,8 +769,8 @@ footer .far {
 
 /* big bubble */
 .circular-sb {
-	width: 15rem;
-	height: 15rem;
+	width: 20rem;
+	height: 20rem;
 	position: relative;
 	border: 0.5rem solid var(--container-border);
 	border-radius: 50%;
@@ -1155,7 +1160,9 @@ footer .far {
 	/* *****************************************************************
 	*************************    PAGE : Home *************************
 	***************************************************************** */
-	
+	.home-page{
+		margin-left: 25%;
+	}
 	.home p{
 		border-right: .15em solid var(--third-color);
 		width: 0;
@@ -1245,15 +1252,12 @@ footer .far {
 	/**** Bubbles Languages ****/
 	/* Pictures int/dev */
 	.languages-it{
-		display: flex;
-		justify-content: space-around;
-		align-content: center;
+		display: grid;
+		grid-template-columns: repeat(6, 1fr);
 	}
 	
 	/* big bubble */
 	.circular-sb {
-		width: 15rem;
-		height: 15rem;
 		margin-right: 1rem;
 	}
 	
