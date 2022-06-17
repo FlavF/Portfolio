@@ -45,26 +45,21 @@
     <h2>Les liens</h2>
     <div class="links">
         <!-- Tags -->
-        <?php foreach($tags as $tag): ?>
+        <?php foreach($links as $link): ?>
         <article class="category">
-            <table>
+            <table>                       
                 <!-- Category -->
-                <caption><?=htmlspecialchars($tag['tag']) ?></caption>
+                 <!-- TODO: annuler la répétition du links tag -->
+                <caption><?=htmlspecialchars($link['link_tag']) ?></caption>
+                 
                 <tbody>
-                    <?php foreach($links as $link): ?>
-                        <?php if(isset($link['link']) && !empty($link['link'])) :?>
-                        <?php if($link['level'] == 1) :?>
-                        <?php if($tag['id_tag'] === $link['id_tag']) :?>
                     <tr>
                         <td>
                             <!-- Link -->
                             <a href="<?=htmlspecialchars($link['url']) ?>" title="<?=htmlspecialchars($link['title']) ?>" target="_blank"><?=htmlspecialchars($link['link']) ?></a>
                         </td>
-                        <?php endif; ?>
-                        <?php endif; ?>
-                        <?php endif; ?>
+                
                     </tr>
-                    <?php endforeach; ?>
                 </tbody>
             </table>
         </article>
