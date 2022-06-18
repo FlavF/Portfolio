@@ -16,9 +16,9 @@ class LinkModel extends ModelManager
     //Show links & tags
     public function getLinksTags()
     {
-        $req = "SELECT DISTINCT link_tag,link, url, title, Links_tags.id_link_tag as id_tag, level 
-        FROM Links_tags
-        INNER JOIN  Links
+        $req = "SELECT DISTINCT Links_tags.link_tag as tag,Links.link as link, Links.url as url, Links.title as title, Links_tags.id_link_tag as id_tag, Links.level as level
+        FROM Links_tags 
+        INNER JOIN Links 
         ORDER By id_tag";
         
         return $this -> queryFetchAll($req);
