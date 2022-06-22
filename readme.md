@@ -1,25 +1,69 @@
-# Portofolio
-My personal CV
+# Portofolio (monthly update)
+## Table of Contents
 
-## Stacks
+1. [General Info](#general-info)
+2. [Stacks](#stacks)
+3. [Installation](#installation)
+4. [Pages](#pages)
+5. [Database](#database)
+6. [Use](#use)
+7. [TODO](#todo)
+8. [FAQs](#faqs)
+
+<br/>
+
+### General Info
+
+---
+
+My personal CV. 
+
+To promote myself.
+
+<br/>
+
+### Stacks
+
+---
 Architecture MVC
-Language : PHP 8.1.6
+- [PHP](https://www.php.net/): Version 8.1.6
+- [JavaScript]()
+- [CSS]()
+- [MySQL](https://www.mysql.com/)
 
-## Pages
+<br/>
+
+### Installation
+
+---
+- Need PHP 
+- XAMP or equivalent
+- MySQL     database 
+
+<br/>
+
+### Pages
+
+---
+    - header : logo and darkmode button
+    - footer : to contact and follow
+    - aside : menu
+
+
 - homepage : aside with menu, photo, menu
-- about : CV informations and CV.pdf
+- about : CV details and CV.pdf
 - link : links useful
 - photography : my photographies
 - project : project done
 - opinion : rate the portfolio
-- message : send a message 
+- message : send a message
 
-## Subpages
-- header : logo and darkmode button
-- footer : to contact and follow
-- aside : menu 
+<br/>
 
-## Database contains
+### Database
+---
+
+![Image text](DatabasePortfolio.png)
 - certifications
 - cloud
 - IT
@@ -31,14 +75,45 @@ Language : PHP 8.1.6
 - Rating
 - RH
 - User
+<br/>
 
-## To use
-To promote my CV
+### Use
 
-## TODO :
-[ ] % language 
-[ ] alert email when somebody add a link
-[ ] not showing the tag when no links inside
-[ ] add logo in homepage ?
-[ ] add links
-[ ] git
+---
+When you add the database and active XAMP you can connect via : [index.php](index.php)
+
+- to get to know me better : [Porfolio on line - About](https://flavproject.000webhostapp.com/CVPortfolio/index.php?page=about)
+
+- to run my projects : - to see my photographies : [Porfolio on line - Project](https://flavproject.000webhostapp.com/CVPortfolio/index.php?page=project)
+
+- to see my photographies : [Porfolio on line - Photos](https://flavproject.000webhostapp.com/CVPortfolio/index.php?page=photography)
+
+- to add links on the page : [Porfolio on line - Links](https://flavproject.000webhostapp.com/CVPortfolio/index.php?page=link)
+
+- to send your opinion about my website : [Porfolio on line - Opinion](https://flavproject.000webhostapp.com/CVPortfolio/index.php?page=opinion)
+
+- to send me a message : [Porfolio on line - Message](https://flavproject.000webhostapp.com/CVPortfolio/index.php?page=message)
+
+
+<br/>
+
+### TODO
+
+---
+- [ ] % language
+- [ ] alert email when somebody add a link
+- [ ] not showing the tag when no links inside the box
+- [ ] add logos in menu top homepage ?
+- [ ] add links
+- [ ] git
+- [ ] get faster (see how to improve it ; Photographies size, code shorter, ...)
+
+<br/>
+
+### FAQs
+
+---
+
+
+
+
