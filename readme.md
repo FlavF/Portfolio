@@ -1,4 +1,7 @@
 # Portofolio
+My personal CV
+
+## Stacks
 Architecture MVC
 Language : PHP 8.1.6
 
@@ -15,6 +18,22 @@ Language : PHP 8.1.6
 - header : logo and darkmode button
 - footer : to contact and follow
 - aside : menu 
+
+## Database contains
+- certifications
+- cloud
+- IT
+- languages IT
+- language
+- Link
+- Photography
+- Project
+- Rating
+- RH
+- User
+
+## To use
+To promote my CV
 
 ## TODO :
 [ ] % language 
