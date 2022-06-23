@@ -31,6 +31,9 @@ Architecture MVC
 - [CSS]()
 - [MySQL](https://www.mysql.com/)
 
+Librairy : 
+- [PHPMailer](https://github.com/PHPMailer/PHPMailer)
+
 <br/>
 
 ### Installation
@@ -38,7 +41,7 @@ Architecture MVC
 ---
 - Need PHP 
 - XAMP or equivalent
-- MySQL     database 
+- MySQL database 
 
 <br/>
 
@@ -105,7 +108,7 @@ When you add the database and active XAMP you can connect via : [index.php](inde
 - [ ] not showing the tag when no links inside the box
 - [ ] add logos in menu top homepage ?
 - [ ] add links
-- [ ] git
+- [ ] git (add the file hide)
 - [ ] get faster (see how to improve it ; Photographies size, code shorter, ...)
 
 <br/>
