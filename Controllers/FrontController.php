@@ -2,39 +2,27 @@
 
 class FrontController
 {
-  //  public $menusAside;
-  // 
-//
-  //  /*** Class constructor */
-  //  public function __construct()
-  //  {
-  //      $this-> setMenu();
-  //  }
-  //  
-  //  // for aside
-  //  public function setMenu (){
-  //      // get the elements from the table Menu
-  //      $modelAside = new MenuModel();
-  //      $this -> menusAside = $modelAside -> getMenuAside();
-  //  }
-  //  
-
-
+  // For PHP MAILER
+  protected $myEmail;
+  protected $password;
+  
+  public function __construct()
+  {
+    //? datas for phpmailer
+    $datasEmail = parse_ini_file("./config/email.ini");
+    $this->myEmail = $datasEmail['MAILER_EMAIL'];
+    $this->myPassword = $datasEmail['MAILER_PASSWORD'];          
+  }
+    
   //todo: à faire fonctionner
-public function getBrowser()
-{
-echo $_SERVER['HTTP_USER_AGENT'] . "\n\n";
-
-$browser = get_browser(null, true);
-print_r($browser);
-
-}
-
-
-
-    //cookie : don't eat it
-    public function createCookie()
-    {
-        setcookie('test',true,time()+365*24*3600);
-    }
+  public function getBrowser()
+  {
+    echo $_SERVER['HTTP_USER_AGENT'] . "\n\n";
+    
+    $browser = get_browser(null, true);
+    print_r($browser);
+    
+  }
+  
+  
 }

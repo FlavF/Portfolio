@@ -1,14 +1,11 @@
 <?php 
 use PHPMailer\PHPMailer\PHPMailer;
-require_once "Assets/PHPMailer/SMTP.php";
-require_once "Assets/PHPMailer/Exception.php";
-require_once "Assets/PHPMailer/PHPMailer.php";
-
+require_once "config/PHPMailer/SMTP.php";
+require_once "config/PHPMailer/Exception.php";
+require_once "config/PHPMailer/PHPMailer.php";
 
 class MessageController{
-    
     public function display(){
-        
         // templates page
         $template = "message.phtml";
         include "Views/layout.phtml";
@@ -22,51 +19,56 @@ class MessageController{
         {
             //data to modify
             $clientEmail = $_POST['email']; // this is client Email
-            $devEmail = "flaviaf91@gmail.com"; // this is the dev Email
             $name = $_POST['name'];
-            $subject = "Message Portfolio - ";
-            $message = $name . " " . " a ecrit:" . "\n\n" . $_POST['message'];
-            $passW = "Bisounours4785";
+            $devEmail = $this->myEmail; // this is the dev Email
+            $passW = $this->myPassword;
+            $subject = "Message Portfolio FlavDev - De ". $name;
+            $message = "Bonjour " . $name . ", " ."\n\n" . "Vous avez écrit:" . "\n\n" . $_POST['message']. "\n\n" . " Je vous remercie pour votre message et reviens vers vous au plus vite. ". "\n\n" . "FlavDev";
             
-            try{
-                //smtp settings
-                $mail->isSMTP();
-                $mail->Host = "smtp.gmail.com";
-                $mail->SMTPAuth = true;
-                $mail->Username = $devEmail;
-                $mail->Password = $passW;
-                $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-                $mail->Port = '587';
-                
-                //email settings
-                $mail->setFrom($clientEmail, $name);
-                $mail->addAddress($devEmail);
-                $mail->addCC($clientEmail, $name);
-                $mail->isHTML(true);
-                
-                $mail->Subject = $subject;
-                $mail->Body = $message;
-                
-                $mail->send();
-
-                if(empty($clientEmail)){
-                    $response = "Votre email n'a pas été renseigné. Votre message ne peut donc pas être envoyé.";
-                }
-                else{
+            if(empty($clientEmail)){
+                $response = "Votre email n'a pas été renseigné. Votre message ne peut donc pas être envoyé.";
+            }
+            else{
+                try{
+                    //smtp settings
+                    $mail->CharSet = 'UTF-8';
+                    $mail->Encoding = 'base64';
+                    $mail->isSMTP();
+                    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+                    $mail->Host = "smtp.gmail.com";
+                    $mail->Port = '587';
+                    // 465;
+                    // '587';
+                    $mail->SMTPAuth = true;
+                    $mail->Username = $devEmail;
+                    $mail->Password = $passW;
+                    
+                    //email settings
+                    $mail->setFrom($devEmail, "FlavDev");
+                    $mail->addAddress($clientEmail, $name);
+                    $mail->addBCC($devEmail, "FlavDev");
+                    
+                    // Set email format to HTML
+                    $mail->isHTML(true);
+                    $mail->Subject = $subject;
+                    $mail->Body = $message;
+                    
+                    $mail->send();
+                    
                     $response = "Votre email a bien été envoyé. Je vous remercie " . $name . ".";
                 }
-                
-                
-            }catch(Exception $e)
-            {
+                                
+                catch(Exception $e)
+                {
                 $response = "Email non envoyé.". $e->getMessage();
+                 }
             }
-            // to reload the page with ok or not
-            header("location: index.php?page=message&response=$response");
-        }
+        // to reload the page with ok or not
+        header("location: index.php?page=message&response=$response");
     }
-    
-    
+}
+
+
 }
 
 ?>

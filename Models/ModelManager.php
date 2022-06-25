@@ -2,18 +2,36 @@
 
 class ModelManager
 {
-    
     // class for database
     protected $bdd;
+    protected $dotenv;
+    protected $host;
+    protected $user;
+    protected $password;
+    protected $database;   
     
     public function __construct()
     {
+         //? datas 
+        $db = parse_ini_file("./config/database.ini");
+        $host = $db['DB_HOST'];
+        $user = $db['DB_USERNAME'];
+        $password = $db['DB_PASSWORD'];
+        $database = $db['DB_NAME'];           
+        
         //connect to the database		  
         try {
-             //$this-> bdd = new PDO('mysql:host=127.0.0.1;dbname=Portfolio;charset=utf8','root');
-            
+               
+
+            //connecting to the database
+            $this-> bdd = new PDO("mysql:host=$host;dbname=$database;charset=utf8","$user", "$password");
+
+
+            /// locahost  ///
+            // $this-> bdd = new PDO('mysql:host=127.0.0.1;dbname=Shops_test;charset=utf8','root');
+
              //bdd 3WA
-            $this-> bdd = new PDO('mysql:host=db.3wa.io;dbname=flaviafon_Portfolio;charset=utf8','flaviafon','04b91770b2423ebdff05b9438daca50e');
+            // $this-> bdd = new PDO('mysql:host=db.3wa.io;dbname=flaviafon_Portfolio;charset=utf8','flaviafon','04b91770b2423ebdff05b9438daca50e');
         }
 
         catch (Exception $ex) 

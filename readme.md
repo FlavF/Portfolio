@@ -42,6 +42,11 @@ Librairy :
 - Need PHP 
 - XAMP or equivalent
 - MySQL database 
+- PHPMailer
+
+````
+composer require phpmailer/phpmailer
+````
 
 <br/>
 
@@ -104,11 +109,11 @@ When you add the database and active XAMP you can connect via : [index.php](inde
 
 ---
 - [ ] % language
-- [ ] alert email when somebody add a link
+- [X] alert email when somebody add a link
 - [ ] not showing the tag when no links inside the box
 - [ ] add logos in menu top homepage ?
-- [ ] add links
-- [ ] git (add the file hide)
+- [ ] add links I know of
+- [ ] git (add the file hidden)
 - [ ] get faster (see how to improve it ; Photographies size, code shorter, ...)
 
 <br/>

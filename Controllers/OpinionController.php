@@ -4,8 +4,7 @@ class OpinionController extends FrontController
 {
     public function display()
     {
-        // $message = "Vous pouvez voter.";
-        
+            
         // nbr star 1
         $model = new RatingModel();
         $star1 = $model -> getStar1();
