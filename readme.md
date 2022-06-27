@@ -108,6 +108,7 @@ When you add the database and active XAMP you can connect via : [index.php](inde
 ### TODO
 
 ---
+- [ ] PHPMAILER don't work anymore. Check why and correct it.
 - [ ] % language
 - [X] alert email when somebody add a link
 - [ ] not showing the tag when no links inside the box

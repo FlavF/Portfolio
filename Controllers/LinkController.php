@@ -1,15 +1,6 @@
 <?php
-
-use PHPMailer\PHPMailer\PHPMailer;
-require_once "config/PHPMailer/SMTP.php";
-require_once "config/PHPMailer/Exception.php";
-require_once "config/PHPMailer/PHPMailer.php";
-
-
-
 class LinkController extends FrontController
 {
-  
   public function __construct()
   {
     parent::__construct();     
@@ -49,47 +40,21 @@ class LinkController extends FrontController
       (int) $level
     );
     
-    //* SETTINGS PHP MAILER to send an email
-     
-    //datas for phpMailer
-    $devEmail = $this->myEmail; // this is the dev Email
+    //? SETTINGS PHP MAILER to send an email
+    //datas to send email
+    $receiver = $this->sender;
     $subject = "Message Portfolio - ajout de lien";
+    
     $message = "Un nouveau lien a été ajouté." . "\n\n" . "Lien :" . $_POST["link"] . "Tag référence:" . $_POST["id_tag"];
-    $passW = $this->myPassword;
     
-    //Create an instance; passing `true` enables exceptions
-    //$mail = new PHPMailer();
+    $answerSend = "Je vous remercie pour votre suggestion de lien. Si le lien est accepté, il sera visible sur cette page prochainement.";
     
-    $mail = new PHPMailer();
+    $answerError = "Le lien n'a pas été envoyé : {$this->mail->ErrorInfo}";
     
-    try {
-      //Server settings
-      // $mail->SMTPDebug = SMTP::DEBUG_SERVER; //Enable verbose debug output
-      $mail->isSMTP();                              //Send using SMTP
-      $mail->Host       = "smtp.gmail.com";          //Set the SMTP server to send through
-      $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-      $mail->Username   = $devEmail;           //SMTP username
-      $mail->Password   = $passW;                     //SMTP password
-      $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;  //Enable implicit TLS encryption
-      $mail->Port       = 465;         //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
-      
-      //Recipients
-      $mail->setFrom($devEmail, 'Flavia Dev');
-      $mail->addAddress($devEmail, 'Flavia Dev');     //Add a recipient
-      
-      //Content
-      $mail->isHTML(true);                                  //Set email format to HTML
-      $mail->Subject = $subject;
-      $mail->Body    = $message;
-      
-      $mail->send();
-      
-      $answer = "Je vous remercie pour votre suggestion de lien. Si le lien est accepté, il sera visible sur cette page prochainement.";
-    } catch (Exception $e) {
-      $answer = "Le lien n'a pas été envoyé : {$mail->ErrorInfo}";
-    }
+    //? Front controller function
+     $this->sendMessage($receiver, $receiverName="", $subject, $message, $answerSend, $answerError);
     
     //reload page
-    header("location:index.php?page=link&answer=$answer");
+    header("location:index.php?page=link&answer=$this->answer");
   }
 }

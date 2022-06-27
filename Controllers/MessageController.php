@@ -1,10 +1,12 @@
 <?php 
-use PHPMailer\PHPMailer\PHPMailer;
-require_once "config/PHPMailer/SMTP.php";
-require_once "config/PHPMailer/Exception.php";
-require_once "config/PHPMailer/PHPMailer.php";
 
-class MessageController{
+class MessageController extends FrontController{
+    
+    public function __construct()
+    {
+        parent::__construct();     
+    }
+    
     public function display(){
         // templates page
         $template = "message.phtml";
@@ -13,62 +15,37 @@ class MessageController{
     
     public function submitForm()
     {
-        $mail = new PHPMailer();
-        
+        // if the form is send
         if(isset($_POST['submit']))
         {
-            //data to modify
-            $clientEmail = $_POST['email']; // this is client Email
-            $name = $_POST['name'];
-            $devEmail = $this->myEmail; // this is the dev Email
-            $passW = $this->myPassword;
-            $subject = "Message Portfolio FlavDev - De ". $name;
-            $message = "Bonjour " . $name . ", " ."\n\n" . "Vous avez écrit:" . "\n\n" . $_POST['message']. "\n\n" . " Je vous remercie pour votre message et reviens vers vous au plus vite. ". "\n\n" . "FlavDev";
+            //datas to send email
+            $receiver = trim($_POST['email']);
+            $receiverName = trim($_POST['name']);
             
-            if(empty($clientEmail)){
-                $response = "Votre email n'a pas été renseigné. Votre message ne peut donc pas être envoyé.";
+            $subject = "Message Portfolio de ".$this->senderName . " - De ". $receiverName;
+            
+            $message = "Bonjour " . $receiverName . ", " ."\n\n" . "Vous avez écrit:" . "\n\n" . $_POST['message']. "\n\n" . " Je vous remercie pour votre message et reviens vers vous au plus vite. ". "\n\n" . $this->senderName;
+            
+            $answerSend = "Votre email a bien été envoyé. Je vous remercie " . $receiverName . ".";
+
+            $answerNoEmailAddress = "Votre email n'a pas été renseigné. Votre message ne peut donc pas être envoyé.";
+            
+            $answerError = "Votre email n'a pas été renseigné. Votre message ne peut donc pas être envoyé.";
+            
+            // if not email of receiver
+            if(empty($receiver)){
+                $this->answer = $answerNoEmailAddress;
             }
             else{
-                try{
-                    //smtp settings
-                    $mail->CharSet = 'UTF-8';
-                    $mail->Encoding = 'base64';
-                    $mail->isSMTP();
-                    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-                    $mail->Host = "smtp.gmail.com";
-                    $mail->Port = '587';
-                    // 465;
-                    // '587';
-                    $mail->SMTPAuth = true;
-                    $mail->Username = $devEmail;
-                    $mail->Password = $passW;
-                    
-                    //email settings
-                    $mail->setFrom($devEmail, "FlavDev");
-                    $mail->addAddress($clientEmail, $name);
-                    $mail->addBCC($devEmail, "FlavDev");
-                    
-                    // Set email format to HTML
-                    $mail->isHTML(true);
-                    $mail->Subject = $subject;
-                    $mail->Body = $message;
-                    
-                    $mail->send();
-                    
-                    $response = "Votre email a bien été envoyé. Je vous remercie " . $name . ".";
-                }
-                                
-                catch(Exception $e)
-                {
-                $response = "Email non envoyé.". $e->getMessage();
-                 }
+                //? Front controller function
+                $this->sendMessage($receiver, $receiverName, $subject, $message, $answerSend, $answerError);
             }
-        // to reload the page with ok or not
-        header("location: index.php?page=message&response=$response");
+            // to reload the page with ok or not
+            header("location: index.php?page=message&response=$this->answer");
+        }
     }
-}
-
-
+    
+    
 }
 
 ?>
