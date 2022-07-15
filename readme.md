@@ -1,4 +1,4 @@
-# Portofolio (monthly update)
+# Portofolio V1 (no change will be done, V2 en express.js / Node.js)
 ## Table of Contents
 
 1. [General Info](#general-info)
@@ -105,12 +105,12 @@ When you add the database and active XAMP you can connect via : [index.php](inde
 
 <br/>
 
-### TODO
+### TODO  => to correct on V2 with Node.js
 
 ---
 - [ ] PHPMAILER don't work anymore. Check why and correct it.
 - [ ] % language
-- [X] alert email when somebody add a link
+- [ ] alert email when somebody add a link
 - [ ] not showing the tag when no links inside the box
 - [ ] add logos in menu top homepage ?
 - [ ] add links I know of
